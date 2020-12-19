@@ -1,2 +1,4 @@
-venv/
-.idea/
+document/Thumbs.db
+.gitignore
+/venv/
+/.idea/
