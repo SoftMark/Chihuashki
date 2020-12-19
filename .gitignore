@@ -1,3 +1,4 @@
 document/Thumbs.db
 /venv/
 /.idea/
+/__pycache__/
