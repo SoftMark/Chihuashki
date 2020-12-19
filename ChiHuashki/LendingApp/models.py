@@ -18,7 +18,6 @@ class Chihuahua(models.Model):
     media_links = models.TextField('Ссылки на медиа')
 
 
-
     def __str__(self):
         return self.name
 
