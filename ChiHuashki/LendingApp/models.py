@@ -1,9 +1,10 @@
 from django.db import models
+from dynamic_upload_image_field.fields import DynamicUploadImageField
 
 
 # Create your models here.
 class Chihuahua(models.Model):
-    photo = models.ImageField("Фото", upload_to="images/dog/", blank=True, null=True)
+    photo = DynamicUploadImageField(blank=True)
     name = models.CharField('Имя', max_length=50)
     rewards = models.TextField('Награды')
 
@@ -27,6 +28,11 @@ class Chihuahua(models.Model):
         if not self.photo:
             return "/static/LendingApp/images/no_photo.jpg"
         return self.photo.url
+
+    def get_upload_to(self, field_name):
+        class_name = self.__class__.__name__.lower()
+        instance_name = self.name
+        return "{}/{}".format(class_name, instance_name)
 
     class Meta:
         verbose_name = 'Чихуахуа'

@@ -1,3 +1,4 @@
 Django
 django-mptt
 Pillow
+dynamic-upload-image-field
