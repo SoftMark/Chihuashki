@@ -49,7 +49,7 @@ class Chihuahua(models.Model):
     # If non photo change photo no_photo.jpg
     def get_photo(self):
         if not self.photo:
-            return "/static/LendingApp/images/no_photo.jpg"
+            return "/static/images/no_photo.jpg"
         return self.photo.url
 
     def get_upload_to(self, field_name):
