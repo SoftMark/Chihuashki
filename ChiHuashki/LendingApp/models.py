@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Chihuahua(models.Model):
     name = models.CharField('Имя', max_length=50)
@@ -16,7 +17,6 @@ class Chihuahua(models.Model):
     pedigree_link = models.TextField('Ссылка на родословную')
 
     media_links = models.TextField('Ссылки на медиа')
-
 
     def __str__(self):
         return self.name
