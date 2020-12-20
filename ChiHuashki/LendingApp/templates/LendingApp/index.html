@@ -26,7 +26,19 @@
         </header>
         <div class="container">
             <div class="container">
-                dddd
+                {% block content %}
+                    {% if chihuahuas %}
+                        {% for dog in chihuahuas %}
+                            {% if dog.photo %}
+                                <img src="files/{{ dog.photo }}", alt="{{ dog.name }}", width="500">
+                            {% else %}
+                                <img src="{% static '/LendingApp/images/no_photo.jpg' %}", alt="{{ dog.name }}", width="500">
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        Нет чишек
+                    {% endif %}
+                {% endblock %}
             </div>
         </div>
         <footer></footer>
