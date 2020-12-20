@@ -27,7 +27,7 @@ class DynamicUploadImageField(models.ImageField):
 
 # Create your models here.
 class Chihuahua(models.Model):
-    photo = DynamicUploadImageField(blank=True)
+    photo = DynamicUploadImageField(blank=True, null=True)
     name = models.CharField('Имя', max_length=50)
     rewards = models.TextField('Награды')
 
