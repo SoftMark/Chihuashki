@@ -2,9 +2,10 @@
 <html lang="ru">
 <head>
     {% load static %}
+    <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <title>ChiHuashki</title>
-    <link rel="stylesheet" type="text/css" href="{% static '/LendingApp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
 </head>
 <body>
     <div id="page">
@@ -26,7 +27,19 @@
         </header>
         <div class="container">
             <div class="container">
-                dddd
+                {% block content %}
+                    {% if chihuahuas %}
+                        {% for dog in chihuahuas %}
+                            {% if dog.photo %}
+                                <img src="{{ dog.photo }}", alt="{{ dog.name }}", width="300">
+                            {% else %}
+                                <img src="{% static '/images/no_photo.jpg' %}", alt="{{ dog.name }}", width="300">
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        Нет чишек
+                    {% endif %}
+                {% endblock %}
             </div>
         </div>
         <footer></footer>
