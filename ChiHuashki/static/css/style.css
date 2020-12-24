@@ -17,6 +17,10 @@ a {
     color: #6A4162;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #page {
     background-color: #5b80b2;
 }
@@ -36,6 +40,7 @@ a {
     background-color: #FEFAFA;
     border-radius: 0 0 20px 20px;
     height: 5vw;
+    z-index: 10;
 }
 
 #menu-links a {
@@ -61,20 +66,24 @@ a {
 
 .nav-main li {
     display: block;
-    width: calc(65vw / 5 + var(--i));
+    width: calc(72vw / 5 + var(--i));
     align-self: center;
+}
+
+.nav-main li a {
     margin: 0 0.7vw;
     padding: 0.4vw 0;
+    transition: all .1s, border-radius step-start;
 }
 
-.nav-main li:hover {
+.nav-main li a:hover {
     border-style: solid;
+    border-spacing: 10px;
     border-color: #6A4162;
     border-radius: 20px;
-    transition: 0.1s;
 }
 
-.nav-main li:active {
+.nav-main li a:active {
     background-color: #FED1D1;
 }
 
@@ -115,7 +124,7 @@ a {
     border-style: solid;
     background-position: center;
     background-size: 110%;
-    transition: 0.1s;
+    transition: 0.5s;
 }
 
 .ins {
