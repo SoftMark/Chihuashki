@@ -19,18 +19,18 @@
     <div id="page">
         <header id="header">
             <nav id="menu-links">
-                <a class="nav-logo" href="#">ChiHuashki.com.ua</a>
+                <a class="nav-logo navigate" href="#">ChiHuashki.com.ua</a>
                 <ul class="nav-main">
-                    <li style="--i:-7vw;"><a href="#">О нас</a></li>
-                    <li style="--i:2vw;"><a href="#">Щенки на продажу</a></li>
-                    <li style="--i:-1vw;"><a href="#">Наши девочки</a></li>
-                    <li style="--i:0vw;"><a href="#">Наши мальчики</a></li>
-                    <li style="--i:-3vw;"><a href="#">Наши детки</a></li>
+                    <li style="--i:-7vw;"><a class="navigate" href="#about-us">О нас</a></li>
+                    <li style="--i:2vw;"><a class="navigate" href="#dogs-puppies">Щенки на продажу</a></li>
+                    <li style="--i:-1vw;"><a class="navigate" href="#dogs-girls">Наши девочки</a></li>
+                    <li style="--i:0vw;"><a class="navigate" href="#dogs-boys">Наши мальчики</a></li>
+                    <li style="--i:-3vw;"><a class="navigate" href="#dogs-babies">Наши детки</a></li>
                 </ul>
             </nav>
 
             <div id="head-inform">
-                <div class="tex">Выбери себе нового друга!</div>
+                <h1 class="tex">Выбери себе нового друга!</h1>
 
                 <div class="tel">
                     <a href="">
@@ -46,34 +46,279 @@
             </div>
         </header>
 
-        <div id="container">
-            <div class="container">
-                {% block content %}
-                    {% if chihuahuas %}
-                        {% for dog in chihuahuas %}
-                            {% if dog.photo %}
-                                <img src="{{ dog.photo }}" alt="{{ dog.name }}" width="300">
+        <main id="container">
+            <section class="contents">
+                <h2 class="titles" id="about-us">О нас</h2>
+                <div class="about-us content">
+                    <div class="dog">
+                        <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Вася</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            {% else %}
-                                <img src="{% static '/images/no_photo.jpg' %}" alt="{{ dog.name }}" width="300">
+                    <div class="dog">
+                        <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Зефир</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            {% endif %}
-                        {% endfor %}
-                    {% else %}
-                        Нет чишек
-                    {% endif %}
-                {% endblock %}
+                    <div class="dog">
+                        <img src="chihuahua/Чедр/Чедр.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Чедр</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contents">
+                <h2 class="titles" id="dogs-puppies">Щенки на продажу</h2>
+                <div class="dogs-puppies content">
+                    <div class="dog">
+                        <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Вася</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Зефир</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua/Чедр/Чедр.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Чедр</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contents">
+                <h2 class="titles" id="dogs-girls">Наши девочки</h2>
+                <div class="dogs-girls content">
+                    <div class="dog">
+                        <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Вася</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Зефир</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua//Чедр/Чедр.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Чедр</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contents">
+                <h2 class="titles" id="dogs-boys">Наши мальчики</h2>
+                <div class="dogs-boys content">
+                    <div class="dog">
+                        <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Вася</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Зефир</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua//Чедр/Чедр.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Чедр</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contents">
+                <h2 class="titles" id="dogs-babies">Наши детки</h2>
+                <div class="dogs-babies content">
+                    <div class="dog">
+                        <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Вася</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Зефир</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dog">
+                        <img src="chihuahua//Чедр/Чедр.jpg" alt="" class="img-dog">
+                        <div class="desc-dog">
+                            <span>Чедр</span>
+                            <div class="desc-dog">
+                                <p>Зубки: 5х5</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Возраст: 5(лет)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contents">
+                <h2 class="titles" id="photogallery">Фотогалерея</h2>
+                <div class="photogallery content">
+            <div class="dog">
+                <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                <div class="desc-dog">
+                    <span>Вася</span>
+                    <div class="desc-dog">
+                        <p>Зубки: 5х5</p>
+                        <p>Цвета шерстки: белий, желтый</p>
+                        <p>Возраст: 5(лет)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dog">
+                <img src="chihuahua/Зефир/Зефир.jpg" alt="" class="img-dog">
+                <div class="desc-dog">
+                    <span>Зефир</span>
+                    <div class="desc-dog">
+                        <p>Зубки: 5х5</p>
+                        <p>Цвета шерстки: белий, желтый</p>
+                        <p>Возраст: 5(лет)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dog">
+                <img src="chihuahua//Чедр/Чедр.jpg" alt="" class="img-dog">
+                <div class="desc">
+                    <span>Чедр</span>
+                    <div class="desc-dog">
+                        <p>Зубки: 5х5</p>
+                        <p>Цвета шерстки: белий, желтый</p>
+                        <p>Возраст: 5(лет)</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <a id="topChi" href="#" style="display: none" title="Вернуться к началу страницы">Вверх</a>
-        <footer></footer>
-    </div>
+            </section>
+<!--                {% block content %}-->
+<!--                    {% if chihuahuas %}-->
+<!--                        {% for dog in chihuahuas %}-->
+<!--                            {% if dog.photo %}-->
+<!--                                <img src="{{ dog.photo }}" alt="{{ dog.name }}" width="300">-->
 
-    <div class="copyright">
-		<div class="container">
-			ChiHuashki.com.ua © 2020
-		</div>
-	</div>
+<!--                            {% else %}-->
+<!--                                <img src="{% static '/images/no_photo.jpg' %}" alt="{{ dog.name }}" width="300">-->
+
+<!--                            {% endif %}-->
+<!--                        {% endfor %}-->
+<!--                    {% else %}-->
+<!--                        Нет чишек-->
+<!--                    {% endif %}-->
+<!--                {% endblock %}-->
+        </main>
+
+        <a class="navigate" id="topChi" href="#" style="display: none" title="Вернуться к началу страницы">Вверх</a>
+
+        <footer>
+            <div class="copyright">
+                <div class="container">
+                    ChiHuashki.com.ua © 2020
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="{% static '/js/script.js' %}"></script>
 </body>
 </html>
