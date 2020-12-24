@@ -1,5 +1,15 @@
 * {
     margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333333;
+    background: #FED1D1;
+    height: 3000px;
 }
 
 a {
@@ -11,36 +21,130 @@ a {
     background-color: #5b80b2;
 }
 
-#menu{
-    display: flex;
-    width: 100vw;
+#header {
+    height: 100vh;
+    background-image: url("/content/images/papy.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: bottom;
 }
 
 #menu-links {
     display: flex;
-    background-color: white;
+    position: fixed;
+    width: 100vw;
+    background-color: #FEFAFA;
     border-radius: 0 0 20px 20px;
+    height: 5vw;
 }
 
 #menu-links a {
-    display: block;
-    padding: 5vh 0 5vh 0;
+    display: flex;
     text-align: center;
+    font-family: "Montserrat SemiBold", sans-serif;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-logo {
     background-color: #FED1D1;
-    width: 25vw;
+    width: 35vw;
     border-radius: 0 0 20px 20px;
+    font-size: 2.5vw;
 }
 
 .nav-main {
     list-style: none;
-    margin: 0;
-    padding-left: 0;
     display: flex;
+    font-size: 1.2vw;
 }
+
 .nav-main li {
     display: block;
-    width: calc(75vw / 5);
+    width: calc(65vw / 5 + var(--i));
+    align-self: center;
+    margin: 0 0.7vw;
+    padding: 0.4vw 0;
+}
+
+.nav-main li:hover {
+    border-style: solid;
+    border-color: #6A4162;
+    border-radius: 20px;
+    transition: 0.1s;
+}
+
+.nav-main li:active {
+    background-color: #FED1D1;
+}
+
+#head-inform {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    font-family: "Montserrat SemiBold", sans-serif;
+    color: #6A4162;
+    width: 100%;
+    bottom: 0;
+}
+
+.tex {
+    font-size: 4vw;
+}
+
+.tel a {
+    display: flex;
+    font-size: 2vw;
+}
+
+.tel img {
+    width: 2vw;
+}
+
+.soc {
+    display: flex;
+}
+
+.soc a {
+    width: 3.3vw;
+    height: 3.3vw;
+    margin: 0 1vw;
+    border-radius: 100%;
+    border-style: solid;
+    background-position: center;
+    background-size: 110%;
+    transition: 0.1s;
+}
+
+.ins {
+    background-image: url("/content/images/instagram.svg");
+}
+
+.face {
+    background-image: url("/content/images/facebook.svg");
+}
+
+.ins:hover {
+    background-image: url("/content/images/instagram_hover.svg");
+}
+
+.face:hover {
+    background-image: url("/content/images/facebook_hover.svg");
+}
+
+.ins:active {
+    background-image: url("/content/images/instagram_active.svg");
+}
+
+.face:active {
+    background-image: url("/content/images/facebook_active.svg");
+}
+
+#topChi {
+    position: fixed;
+    right: 45px;
+    bottom: 45px;
+    transition: 1s;
 }
