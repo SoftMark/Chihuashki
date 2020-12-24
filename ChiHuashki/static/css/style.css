@@ -1,15 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
-    color: #333333;
-    background: #FED1D1;
-    height: 3000px;
+    color: #6A4162;
+    background-color: #D46A92;
 }
 
 a {
@@ -17,12 +14,12 @@ a {
     color: #6A4162;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
-
 #page {
-    background-color: #5b80b2;
+    background-color: #FED1D1;
+    font-family: "Montserrat SemiBold", sans-serif;
+    background-image: url("/content/images/lapki.png");
+    background-blend-mode: overlay;
+    background-size: 10vw;
 }
 
 #header {
@@ -46,7 +43,6 @@ a {
 #menu-links a {
     display: flex;
     text-align: center;
-    font-family: "Montserrat SemiBold", sans-serif;
     align-items: center;
     justify-content: center;
 }
@@ -78,9 +74,7 @@ a {
 
 .nav-main li a:hover {
     border-style: solid;
-    border-spacing: 10px;
-    border-color: #6A4162;
-    border-radius: 20px;
+    border-radius: 2vw;
 }
 
 .nav-main li a:active {
@@ -124,7 +118,6 @@ a {
     border-style: solid;
     background-position: center;
     background-size: 110%;
-    transition: 0.5s;
 }
 
 .ins {
@@ -149,6 +142,46 @@ a {
 
 .face:active {
     background-image: url("/content/images/facebook_active.svg");
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+    margin: 0 15vw;
+}
+
+.contents {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.contents:last-child {
+    margin-bottom: 2vw;
+}
+
+.titles {
+    text-align: center;
+    padding: 5vw 0 2vw 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dog {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    border: solid #6A4162;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+img.img-dog {
+    border-radius: .8vw;
+    height: 15vw;
 }
 
 #topChi {
