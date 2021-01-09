@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "LendingApp.apps.LendingappConfig",
+    'django_cleanup',  # should go after your apps
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/content/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = STATIC_DIR
+# STATIC_ROOT = STATIC_DIR
 STATICFILES_DIRS = (STATIC_DIR,)
 
 # Путь у папке
