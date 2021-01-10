@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChiHuashki</title>
@@ -17,35 +17,8 @@
 </head>
 <body>
     <div id="page">
-        <header id="header">
-            <nav id="menu-links">
-                <a class="nav-logo navigate" href="#header">ChiHuashki.com.ua</a>
-                <ul class="nav-main">
-                    <li style="--i:-7vw;"><a class="navigate" href="#about-us">О нас</a></li>
-                    <li style="--i:2vw;"><a class="navigate" href="#dogs-puppies">Щенки на продажу</a></li>
-                    <li style="--i:-1vw;"><a class="navigate" href="#dogs-girls">Наши девочки</a></li>
-                    <li style="--i:0vw;"><a class="navigate" href="#dogs-boys">Наши мальчики</a></li>
-                    <li style="--i:-3vw;"><a class="navigate" href="#dogs-babies">Наши детки</a></li>
-                </ul>
-            </nav>
 
-            <div id="head-inform">
-                <h1 class="tex">Выбери себе нового друга!</h1>
-
-                <div class="tel">
-                    <a href="">
-                        <img src="{% static 'images/PhoneCall.svg' %}" alt="">
-                        099-530-17-34
-                    </a>
-                </div>
-
-                <div class="soc">
-                    <a href="" class="ins"></a>
-                    <a href="" class="face"></a>
-                </div>
-            </div>
-        </header>
-
+        {% include "LendingApp/includes/header.html" %}
 
         {% block content %}
 
