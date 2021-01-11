@@ -24,27 +24,6 @@ from django.db.models.signals import pre_save, post_init
 #         if hasattr(instance, "get_upload_to"):
 #             self.upload_to = instance.get_upload_to(self.attname)
 
-class GalleryImage(models.Model):
-    image_name = models.CharField('Название картинки', max_length=50)
-    link = models.TextField('Ссылка на чишку', blank=True)
-    image = models.ImageField(verbose_name='Изображение', upload_to='gallery', default=None)
-
-    def image_img(self):
-        if self.image:
-            from django.utils.safestring import mark_safe
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
-        else:
-            return '(Нет изображения)'
-    image_img.short_description = 'Изображение'
-    image_img.allow_tags = True
-
-    def __str__(self):
-        return self.image_name
-
-    class Meta:
-        verbose_name = 'Изображение для галереи'
-        verbose_name_plural = 'Галерея'
-
 
 # Create your models here.
 class Chihuahua(models.Model):
@@ -77,7 +56,8 @@ class Chihuahua(models.Model):
 
 class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
-    image = models.ImageField(verbose_name='Фото', upload_to='photos')
+    image = models.ImageField(upload_to='photos')
+    chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
 
     # def get_upload_to(self, field_name):
     #     class_name = self.chihuahua.__class__.__name__.lower()
@@ -89,22 +69,6 @@ class Photo(models.Model):
         if not self.image:
             return "/static/LendingApp/images/no_photo.jpg"
         return self.image.url
-
-    @classmethod
-    def image_no_photo(cls):
-        no_photo_url = "/static/no_photo.jpg"
-        from django.utils.safestring import mark_safe
-        return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(no_photo_url))
-
-    def image_img(self):
-        if self.image:
-            from django.utils.safestring import mark_safe
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
-        else:
-            return self.image_no_photo()
-
-
-    chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
 
 # Create settings content
 # class Content(models.Model):
