@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django.contrib import admin
 from .models import Chihuahua, Photo
+from django.utils.html import mark_safe
 
 # admin.site.register(Chihuahua)
 
@@ -28,3 +29,5 @@ class GalleryInline(admin.TabularInline):
 class ChihuahuaAdmin(admin.ModelAdmin):
     inlines = [GalleryInline, ]
     list_display = ("name", "age", "teeth")
+
+

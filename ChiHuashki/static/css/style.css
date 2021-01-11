@@ -92,9 +92,10 @@ a {
     align-items: center;
     padding: 1vw;
     font-family: "Montserrat SemiBold", sans-serif;
-    color: #6A4162;
+    color: #FED1D1;
     width: 100%;
     bottom: 0;
+    text-shadow: black 0 0 3px;
 }
 
 .tex {
@@ -104,10 +105,12 @@ a {
 .tel a {
     display: flex;
     font-size: 2vw;
+    color: #FED1D1;
 }
 
 .tel img {
     width: 2vw;
+    color: #FED1D1;
 }
 
 .soc {
@@ -253,4 +256,18 @@ img.img-dog {
     position: fixed;
     right: 45px;
     bottom: 45px;
+}
+
+@media (max-width: 560px) {
+    #header {
+        background-image: url("/content/images/BackGround1.jpg");
+        background-position-y: -30vw;
+    }
+}
+
+@media (max-width: 400px) {
+    #header {
+        background-image: url("/content/images/BackGround1.jpg");
+        background-position: center;
+    }
 }
