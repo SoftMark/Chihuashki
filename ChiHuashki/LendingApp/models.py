@@ -54,7 +54,7 @@ class Chihuahua(models.Model):
         verbose_name_plural = 'Чишки'
 
 
-class Gallery(models.Model):
+class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(upload_to='photos')
     chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
@@ -65,7 +65,7 @@ class Gallery(models.Model):
     #     return "{}/{}".format(class_name, instance_name)
 
     # If non photo change photo no_photo.jpg
-    def get_photo(self):
+    def get_url(self):
         if not self.image:
             return "/static/LendingApp/images/no_photo.jpg"
         return self.image.url

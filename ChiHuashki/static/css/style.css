@@ -202,16 +202,30 @@ img.img-dog {
     font-size: 1vw;
 }
 
-.info-dog span::after {
+
+
+.info-dog span#male::after {
     content: "";
     position: absolute;
     width: 1vw;
     height: 1vw;
-    background-image: url("/content/images/state.png");
+    background-image: url("/content/images/male.png");
     background-size: 1vw;
     background-repeat: no-repeat;
     margin-left: .5vw;
 }
+
+.info-dog span#female::after {
+    content: "";
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    background-image: url("/content/images/female.png");
+    background-size: 1vw;
+    background-repeat: no-repeat;
+    margin-left: .3vw;
+}
+
 
 .desc-dog {
     text-align: left;
