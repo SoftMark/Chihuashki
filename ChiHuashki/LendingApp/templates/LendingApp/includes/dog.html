@@ -1,0 +1,26 @@
+{% load static %}
+
+
+
+{% if chihuahuas %}
+    {% for dog in chihuahuas %}
+        {% if dog.gender == gender or gender == None %}
+            {% if dog.age == age or age == None %}
+                {% if dog.sale == sale or sale == None %}
+                <div class="dog">
+                                <img src="chihuahua/Вася/Вася.jpg" alt="" class="img-dog">
+                                <div class="info-dog">
+                                    <span>{{ dog.name }}</span>
+                                    <div class="desc-dog">
+                                        <p>Зубки: 5х5</p>
+                                        <p>Цвета шерстки: белий, желтый</p>
+                                        <p>Возраст: 5(лет)</p>
+                                    </div>
+                                </div>
+                            </div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+

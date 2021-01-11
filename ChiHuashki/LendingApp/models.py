@@ -28,9 +28,14 @@ from django.db.models.signals import pre_save, post_init
 # Create your models here.
 class Chihuahua(models.Model):
     name = models.CharField('Имя', max_length=50)
+    gender = models.CharField(choices=(('suka', "сука"), ('kobel', "кобель")),  verbose_name='Пол', max_length=20, default='suka')
     rewards = models.TextField('Награды')
 
     birth_date = models.DateField('Дата рождения')
+    age = models.CharField(choices=(('puppy', "щенок"), ('adult', "взрослый")),  verbose_name='Щенок/Взрослый',
+                           max_length=20, default='adult')
+    sale = models.CharField(choices=(('yes', "да"), ('not', "нет")), verbose_name='Для продажи',
+                            max_length=20, default='yes')
     teeth = models.CharField('Зубы', max_length=7)
     weight = models.FloatField('Вес')
     color = models.TextField('Окрас')
