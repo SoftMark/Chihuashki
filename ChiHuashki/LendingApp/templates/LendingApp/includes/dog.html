@@ -1,0 +1,37 @@
+{% load static %}
+
+
+
+{% if chihuahuas %}
+    {% for dog in chihuahuas %}
+        {% if dog.gender == gender or gender == None %}
+        {% if dog.age == age or age == None %}
+        {% if dog.sale == sale or sale == None %}
+        <div class="dog">
+                        {% if dog.images.all.0 %}
+                        <img src="{{ dog.images.all.0.get_url }}" alt="Not found" class="img-dog">
+                        {% else %}
+                        <img src="content/images/no_photo.jpg" alt="Not found" class="img-dog">
+                        {% endif %}
+
+                        <div class="info-dog">
+
+                            {% if dog.gender == 'suka' %}
+                            <span id="female">{{ dog.name }}</span>
+                            {% else %}
+                            <span id="male">{{ dog.name }}</span>
+                            {% endif %}
+
+                            <div class="desc-dog">
+                                <p>Зубки: {{ dog.teeth }}</p>
+                                <p>Цвета шерстки: белий, желтый</p>
+                                <p>Дата рождения: {{ dog.birth_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+

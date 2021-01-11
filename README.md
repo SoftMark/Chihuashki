@@ -1,2 +1,7 @@
 # ChiHuashki.com.ua
- Site on Django
+
+Sit on Django!!!
+
+Michael - BackEnd
+
+Vlad - FrontEnd

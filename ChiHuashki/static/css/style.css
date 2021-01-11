@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #6A4162;
+    background-color: #D46A92;
+}
+
+a {
+    text-decoration: none;
+    color: #6A4162;
+}
+
+#page {
+    background-color: #FEFAFA;
+    font-family: "Montserrat SemiBold", sans-serif;
+    background-image: url("/content/images/lapki.png");
+    background-blend-mode: overlay;
+    background-size: 10vw;
+}
+
+#header {
+    height: 100vh;
+    background-image: url("/content/images/BackGround.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+#menu-links {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color: #fefafa;
+    border-radius: 0 0 1vw 1vw;
+    height: 5vw;
+    z-index: 10;
+}
+
+#menu-links a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo {
+    background-color: #FED1D1;
+    width: 35vw;
+    border-radius: 0 0 1vw 1vw;
+    /*border-right-style: solid;*/
+    /*border-bottom-style: solid;*/
+    /*border-color: #6A4162;*/
+    /*border-width: .2vw;*/
+    font-size: 2.5vw;
+}
+
+.nav-main {
+    list-style: none;
+    display: flex;
+    font-size: 1.2vw;
+}
+
+.nav-main li {
+    display: block;
+    width: calc(72vw / 5 + var(--i));
+    align-self: center;
+}
+
+.nav-main li a {
+    margin: 0 0.7vw;
+    padding: 0.4vw 0;
+    transition: all .1s, border-radius step-start;
+}
+
+.nav-main li a:hover {
+    border: solid .2vw;
+    border-radius: 2vw;
+}
+
+.nav-main li a:active {
+    background-color: #FED1D1;
+}
+
+#head-inform {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    font-family: "Montserrat SemiBold", sans-serif;
+    color: #FED1D1;
+    width: 100%;
+    bottom: 0;
+    text-shadow: black 0 0 3px;
+}
+
+.tex {
+    font-size: 4vw;
+}
+
+.tel a {
+    display: flex;
+    font-size: 2vw;
+    color: #FED1D1;
+}
+
+.tel img {
+    width: 2vw;
+    color: #FED1D1;
+}
+
+.soc {
+    display: flex;
+}
+
+.soc a {
+    width: 3.3vw;
+    height: 3.3vw;
+    margin: 0 1vw;
+    border-radius: 100%;
+    border: solid .2vw;
+    background-position: center;
+    background-size: 110%;
+}
+
+.ins {
+    background-image: url("/content/images/instagram.svg");
+}
+
+.face {
+    background-image: url("/content/images/facebook.svg");
+}
+
+.ins:hover {
+    background-image: url("/content/images/instagram_hover.svg");
+}
+
+.face:hover {
+    background-image: url("/content/images/facebook_hover.svg");
+}
+
+.ins:active {
+    background-image: url("/content/images/instagram_active.svg");
+}
+
+.face:active {
+    background-image: url("/content/images/facebook_active.svg");
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+    margin: 0 15vw;
+}
+
+.contents {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.contents:last-child {
+    margin-bottom: 2vw;
+}
+
+.titles {
+    text-align: center;
+    padding: 2vw 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-us {
+    display: block;
+    justify-content: space-evenly;
+}
+
+.my-text {
+    min-height: 28vw;
+    margin-bottom: 10px;
+}
+
+.about-us img.MyPhoto {
+    float: left;
+    width: 20vw;
+    height: 27vw;
+    margin-right: 10px;
+}
+
+.about-us img.sert {
+    display: block;
+    margin: auto;
+    width: 30vw;
+    height: 20vw;
+}
+
+.dog {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    border: solid .2vw #6A4162;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+img.img-dog {
+    border-radius: .8vw;
+    height: 15vw;
+}
+
+.info-dog {
+    text-align: center;
+}
+
+.info-dog span {
+    display: inline-block;
+    margin: 1vw;
+    padding: .4vw 2vw .4vw .4vw;
+    background-color: #FED1D1;
+    border: solid .2vw;
+    border-radius: .6vw;
+    font-size: 1vw;
+}
+
+
+
+.info-dog span#male::after, .info-dog span#female::after {
+    content: "";
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    background-image: url("/content/images/male.png");
+    background-size: 1vw;
+    background-repeat: no-repeat;
+    margin-left: .5vw;
+}
+
+.info-dog span#female::after {
+    background-image: url("/content/images/female.png");
+}
+
+
+.desc-dog {
+    text-align: left;
+    font-size: .8vw;
+}
+
+#topChi {
+    position: fixed;
+    right: 45px;
+    bottom: 45px;
+}
+
+@media (max-width: 560px) {
+    #header {
+        background-image: url("/content/images/BackGround1.jpg");
+        background-position-y: -30vw;
+    }
+}
+
+@media (max-width: 400px) {
+    #header {
+        background-image: url("/content/images/BackGround1.jpg");
+        background-position: center;
+    }
+}
