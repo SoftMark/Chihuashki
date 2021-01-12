@@ -27,7 +27,6 @@ from django.db.models.signals import pre_save, post_init
 
 class GalleryImage(models.Model):
     image_name = models.CharField('Название картинки', max_length=50)
-    link = models.TextField('Ссылка на чишку', blank=True)
     image = models.ImageField(verbose_name='Изображение', upload_to='gallery', default=None)
 
     def image_img(self):
@@ -106,3 +105,38 @@ class Photo(models.Model):
 
 # Create settings content
 # class Content(models.Model):
+
+
+class AboutUs(models.Model):
+    top_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery', default=None)
+    top_paragraph = models.TextField('Верхний параграф', blank=True)
+    bottom_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery', default=None)
+    bottom_paragraph = models.TextField('Нижний параграф', blank=True)
+
+    def image_get_top(self):
+        if self.top_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.top_image.url))
+        else:
+            return '(Нет изображения)'
+    image_get_top.short_description = 'Верхнее изображение'
+    image_get_top.allow_tags = True
+
+    def image_get_bottom(self):
+        if self.bottom_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.bottom_image.url))
+        else:
+            return '(Нет изображения)'
+    image_get_top.short_description = 'Нижнее изображение'
+    image_get_top.allow_tags = True
+
+    def __str__(self):
+        return 'Блок "О нас"'
+
+    class Meta:
+        verbose_name = 'Блок "О нас"'
+        verbose_name_plural = 'Блок "О нас"'
+
+
+
+
+
