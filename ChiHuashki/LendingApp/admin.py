@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django.contrib import admin
 from .models import Chihuahua, Photo, GalleryImage
+from django.utils.safestring import mark_safe
 
 # admin.site.register(Chihuahua)
 
@@ -46,7 +47,29 @@ class ChihuahuaAdmin(admin.ModelAdmin):
         collected = []
         for img in images:
             collected.append(img.image_img())
-        return collected
+        return mark_safe("".join(collected))
+
+    get_all_images.short_description = 'Фотографии'
+    get_all_images.allow_tags = True
+
+    fieldsets = (
+        (None, {
+            "fields": (
+                ("name", "gender"),
+                "rewards",
+                ("birth_date", "age"),
+                "sale",
+                "teeth",
+                "weight",
+                ("type_of_wool", "color"),
+                ("father", "mother"),
+                "pedigree",
+                "pedigree_link",
+                "video",
+                "get_all_images"
+            ),
+        }),
+    )
 
 
 
