@@ -31,9 +31,11 @@ class GalleryImage(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.image.url))
         else:
             return '(Нет изображения)'
+
     image_img.short_description = 'Изображение'
     image_img.allow_tags = True
 
@@ -48,11 +50,12 @@ class GalleryImage(models.Model):
 # Create your models here.
 class Chihuahua(models.Model):
     name = models.CharField('Имя', max_length=50)
-    gender = models.CharField(choices=(('suka', "сука"), ('kobel', "кобель")),  verbose_name='Пол', max_length=20, default='suka')
+    gender = models.CharField(choices=(('suka', "сука"), ('kobel', "кобель")), verbose_name='Пол', max_length=20,
+                              default='suka')
     rewards = models.TextField('Награды')
 
     birth_date = models.DateField('Дата рождения')
-    age = models.CharField(choices=(('puppy', "щенок"), ('adult', "взрослый")),  verbose_name='Щенок/Взрослый',
+    age = models.CharField(choices=(('puppy', "щенок"), ('adult', "взрослый")), verbose_name='Щенок/Взрослый',
                            max_length=20, default='adult')
     sale = models.CharField(choices=(('yes', "да"), ('not', "нет")), verbose_name='Для продажи',
                             max_length=20, default='yes')
@@ -96,36 +99,41 @@ class Photo(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.image.url))
         else:
             return self.image_no_photo()
 
-
     chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
+
 
 # Create settings content
 # class Content(models.Model):
 
 
 class AboutUs(models.Model):
-    top_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery', default=None)
+    top_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery')
     top_paragraph = models.TextField('Верхний параграф', blank=True)
-    bottom_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery', default=None)
+    bottom_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery')
     bottom_paragraph = models.TextField('Нижний параграф', blank=True)
 
     def image_get_top(self):
         if self.top_image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.top_image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.top_image.url))
         else:
             return '(Нет изображения)'
+
     image_get_top.short_description = 'Верхнее изображение'
     image_get_top.allow_tags = True
 
     def image_get_bottom(self):
         if self.bottom_image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.bottom_image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.bottom_image.url))
         else:
             return '(Нет изображения)'
+
     image_get_top.short_description = 'Нижнее изображение'
     image_get_top.allow_tags = True
 
@@ -135,8 +143,3 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name = 'Блок "О нас"'
         verbose_name_plural = 'Блок "О нас"'
-
-
-
-
-
