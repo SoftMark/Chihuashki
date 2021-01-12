@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< Updated upstream
 from django.db.models.signals import pre_save, post_init
 
 
@@ -44,6 +45,9 @@ class GalleryImage(models.Model):
     class Meta:
         verbose_name = 'Изображение для галереи'
         verbose_name_plural = 'Галерея'
+=======
+from dynamic_upload_image_field.fields import DynamicUploadImageField
+>>>>>>> Stashed changes
 
 
 # Create your models here.
@@ -65,7 +69,11 @@ class Chihuahua(models.Model):
     mother = models.CharField('Мама', max_length=50)
     pedigree = models.CharField('Родословная', max_length=50)
     pedigree_link = models.TextField('Ссылка на родословную')
+<<<<<<< Updated upstream
     video = models.FileField(upload_to='videos', null=True, verbose_name='Видео', blank=True)
+=======
+    video = models.FileField(upload_to='videos', null=True, verbose_name='Видео', )
+>>>>>>> Stashed changes
 
     def __str__(self):
         return self.name
@@ -75,9 +83,16 @@ class Chihuahua(models.Model):
         verbose_name_plural = 'Чишки'
 
 
+<<<<<<< Updated upstream
 class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(verbose_name='Фото', upload_to='photos')
+=======
+class Gallery(models.Model):
+    # image = DynamicUploadImageField(blank=True)
+    image = models.ImageField(upload_to='photos')
+    chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
+>>>>>>> Stashed changes
 
     # def get_upload_to(self, field_name):
     #     class_name = self.chihuahua.__class__.__name__.lower()
@@ -85,11 +100,16 @@ class Photo(models.Model):
     #     return "{}/{}".format(class_name, instance_name)
 
     # If non photo change photo no_photo.jpg
+<<<<<<< Updated upstream
     def get_url(self):
+=======
+    def get_photo(self):
+>>>>>>> Stashed changes
         if not self.image:
             return "/static/LendingApp/images/no_photo.jpg"
         return self.image.url
 
+<<<<<<< Updated upstream
     @classmethod
     def image_no_photo(cls):
         no_photo_url = "/static/no_photo.jpg"
@@ -106,5 +126,9 @@ class Photo(models.Model):
 
     chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
 
+=======
+
+
+>>>>>>> Stashed changes
 # Create settings content
 # class Content(models.Model):
