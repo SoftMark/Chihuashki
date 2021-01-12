@@ -112,6 +112,7 @@ class Photo(models.Model):
 
 
 class AboutUs(models.Model):
+    name = models.CharField('Название шаблона', max_length=50, default='Основной')
     top_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery')
     top_paragraph = models.TextField('Верхний параграф', blank=True)
     bottom_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery')
@@ -134,8 +135,8 @@ class AboutUs(models.Model):
         else:
             return '(Нет изображения)'
 
-    image_get_top.short_description = 'Нижнее изображение'
-    image_get_top.allow_tags = True
+    image_get_bottom.short_description = 'Нижнее изображение'
+    image_get_bottom.allow_tags = True
 
     def __str__(self):
         return 'Блок "О нас"'

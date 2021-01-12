@@ -26,6 +26,7 @@ class ChihGalleryInline(admin.TabularInline):
 
 @admin.register(Chihuahua)
 class ChihuahuaAdmin(admin.ModelAdmin):
+    save_on_top = True
     #form = PhotoForm
     inlines = [ChihGalleryInline, ]
 
@@ -75,6 +76,7 @@ class ChihuahuaAdmin(admin.ModelAdmin):
 # Галерея
 @admin.register(GalleryImage)
 class GalleryAdmin(admin.ModelAdmin):
+    save_on_top = True
     form = PhotoForm
     list_display = ("image_name", "image_img")
     readonly_fields = ('image_img',)
@@ -82,10 +84,11 @@ class GalleryAdmin(admin.ModelAdmin):
 
 # Блок "О нас"
 @admin.register(AboutUs)
-class GalleryAdmin(admin.ModelAdmin):
+class AboutUsAdmin(admin.ModelAdmin):
     # form = PhotoForm
-    list_display = ("top_image", "top_paragraph", "bottom_image", "bottom_paragraph")
-    readonly_fields = ('image_get_top', 'image_get_bottom')
+    save_on_top = True
+    list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
+    readonly_fields = ('image_get_top', 'image_get_bottom', )
 
 
 
