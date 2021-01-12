@@ -49,6 +49,28 @@ class ChihuahuaAdmin(admin.ModelAdmin):
             collected.append(img.image_img())
         return mark_safe("".join(collected))
 
+    get_all_images.short_description = 'Фотографии'
+    get_all_images.allow_tags = True
+
+    fieldsets = (
+        (None, {
+            "fields": (
+                ("name", "gender"),
+                "rewards",
+                ("birth_date", "age"),
+                "sale",
+                "teeth",
+                "weight",
+                ("type_of_wool", "color"),
+                ("father", "mother"),
+                "pedigree",
+                "pedigree_link",
+                "video",
+                "get_all_images"
+            ),
+        }),
+    )
+
 
 
 

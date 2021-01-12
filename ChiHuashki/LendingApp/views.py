@@ -4,4 +4,5 @@ from .models import *
 
 def home(request):
     chihuahuas = Chihuahua.objects.order_by("-id").all()
-    return render(request, "LendingApp/index.html", {"chihuahuas": chihuahuas})
+    gallery = GalleryImage.objects.order_by("-id").all()
+    return render(request, "LendingApp/index.html", {"chihuahuas": chihuahuas, "gallery": gallery})

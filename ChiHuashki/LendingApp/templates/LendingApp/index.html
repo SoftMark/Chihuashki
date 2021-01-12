@@ -1,16 +1,27 @@
 {% extends "LendingApp/wrapper.html" %}
 
 
-
-
 {% block content %}
 <main id="container">
     <section class="contents">
         <h2 class="titles" id="about-us">О нас</h2>
         <div class="about-us content">
-
-
-
+            <div class="my-text">
+                <img class="MyPhoto" src="/Onas/file1.jpg" alt="Женщина с чихуахуа">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet animi architecto consequuntur
+                    corporis cupiditate dicta dolore doloremque error fugiat, ipsum magni optio perferendis sequi soluta,
+                    tempora vitae voluptate voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut
+                    autem delectus dolor, dolorem doloremque est fuga harum impedit ipsa iure magnam minima nemo quisquam
+                    quod quos rem. Culpa, quas.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusamus adipisci, aliquam, aliquid
+                    atque consequuntur cupiditate, eos explicabo itaque iusto natus nihil officia porro quasi sint
+                    ullam. Labore, maiores!
+                </p>
+            </div>
+            <img class="sert" src="/Onas/file3.jpg" alt="Сертификат">
         </div>
     </section>
 
@@ -53,8 +64,12 @@
     <section class="contents">
         <h2 class="titles" id="photogallery">Фотогалерея</h2>
         <div class="photogallery content">
-
-</div>
+            {% if gallery %}
+                {% for image in gallery %}
+            <img src='{{image.image}}' alt='{{image.image_name}}' width='100'>
+                {% endfor %}
+            {% endif %}
+        </div>
     </section>
 
 </main>

@@ -32,7 +32,7 @@ class GalleryImage(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
         else:
             return '(Нет изображения)'
     image_img.short_description = 'Изображение'
@@ -97,7 +97,7 @@ class Photo(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
         else:
             return self.image_no_photo()
 
