@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.db.models.signals import pre_save, post_init
-
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 # class DynamicUploadImageField(models.ImageField):
 #     def __init__(self, *args, **kwargs):
@@ -25,9 +26,14 @@ from django.db.models.signals import pre_save, post_init
 #         if hasattr(instance, "get_upload_to"):
 #             self.upload_to = instance.get_upload_to(self.attname)
 
+
 class GalleryImage(models.Model):
     image_name = models.CharField('Название картинки', max_length=50)
     image = models.ImageField(verbose_name='Изображение', upload_to='gallery', default=None)
+    small_image = ImageSpecField(source='image',
+                                 processors=[ResizeToFill(100, 100)],
+                                 format='JPEG',
+                                 options={'quality': 60})
 
     def image_img(self):
         if self.image:
@@ -80,6 +86,10 @@ class Chihuahua(models.Model):
 class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(verbose_name='Фото', upload_to='photos')
+    small_image = ImageSpecField(source='image',
+                                 processors=[ResizeToFill(300, 200)],
+                                 format='JPEG',
+                                 options={'quality': 60})
 
     # def get_upload_to(self, field_name):
     #     class_name = self.chihuahua.__class__.__name__.lower()

@@ -68,7 +68,7 @@
         <div class="photogallery content">
             {% if gallery %}
                 {% for image in gallery %}
-            <img src='{{image.image}}' alt='{{image.image_name}}' width='100'>
+            <img src='{{image.small_image.url}}' alt='{{image.image_name}}' width='100'>
                 {% endfor %}
             {% endif %}
         </div>

@@ -6,17 +6,20 @@ from django.utils.safestring import mark_safe
 # admin.site.register(Chihuahua)
 
 
-class PhotoForm(ModelForm):
+# Чишки
+class ChihPhotoForm(ModelForm):
     MIN_RESOLUTION = (100, 200)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(
-            *self.MIN_RESOLUTION)
+        #self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(*self.MIN_RESOLUTION)
+        #self.fields['image'].label = 'Загрузите изображение'
+        print(self.fields)
 
 
-# Чишки
+
 class ChihGalleryInline(admin.TabularInline):
+    form = ChihPhotoForm
     fk_name = 'chihuahua'
     model = Photo
     extra = 1  # количество пустых форм
@@ -27,7 +30,7 @@ class ChihGalleryInline(admin.TabularInline):
 @admin.register(Chihuahua)
 class ChihuahuaAdmin(admin.ModelAdmin):
     save_on_top = True
-    #form = PhotoForm
+
     inlines = [ChihGalleryInline, ]
 
     list_display = ("name", 'image', "age", "teeth")
@@ -72,20 +75,43 @@ class ChihuahuaAdmin(admin.ModelAdmin):
         }),
     )
 
+    def get_img_objs(self, obj):
+        pass
+
 
 # Галерея
+class GalleryPhotoForm(ModelForm):
+    MIN_RESOLUTION = (100, 200)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(
+            *self.MIN_RESOLUTION)
+
+
 @admin.register(GalleryImage)
 class GalleryAdmin(admin.ModelAdmin):
     save_on_top = True
-    form = PhotoForm
-    list_display = ("image_name", "image_img")
+    form = GalleryPhotoForm
+    list_display = ("image_name", "image_img", "small_image")
     readonly_fields = ('image_img',)
 
 
 # Блок "О нас"
+class AboutUsPhotoForm(ModelForm):
+    MIN_RESOLUTION = (100, 200)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['top_image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(
+            *self.MIN_RESOLUTION)
+        self.fields['bottom_image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(
+            *self.MIN_RESOLUTION)
+
+
 @admin.register(AboutUs)
 class AboutUsAdmin(admin.ModelAdmin):
-    # form = PhotoForm
+    form = AboutUsPhotoForm
     save_on_top = True
     list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
     readonly_fields = ('image_get_top', 'image_get_bottom', )

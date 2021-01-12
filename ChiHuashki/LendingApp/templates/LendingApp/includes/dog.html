@@ -9,7 +9,7 @@
         {% if dog.sale == sale or sale == None %}
         <div class="dog">
                         {% if dog.images.all.0 %}
-                        <img src="{{ dog.images.all.0.get_url }}" alt="Not found" class="img-dog">
+                        <img src="{{ dog.images.all.0.small_image }}" alt="Not found" class="img-dog">
                         {% else %}
                         <img src="content/images/no_photo.jpg" alt="Not found" class="img-dog">
                         {% endif %}
@@ -21,6 +21,7 @@
                             {% else %}
                             <span id="male">{{ dog.name }}</span>
                             {% endif %}
+
 
                             <div class="desc-dog">
                                 <p>Зубки: {{ dog.teeth }}</p>

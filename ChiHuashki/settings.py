@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "LendingApp.apps.LendingappConfig",
+
     'django_cleanup',  # should go after your apps
+
+    'imagekit',
 ]
 
 MIDDLEWARE = [
