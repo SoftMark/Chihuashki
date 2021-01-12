@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 from django.db.models.signals import pre_save, post_init
 
 
@@ -31,8 +32,7 @@ class GalleryImage(models.Model):
 
     def image_img(self):
         if self.image:
-            from django.utils.safestring import mark_safe
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
         else:
             return '(Нет изображения)'
     image_img.short_description = 'Изображение'
@@ -92,14 +92,12 @@ class Photo(models.Model):
 
     @classmethod
     def image_no_photo(cls):
-        no_photo_url = "/static/no_photo.jpg"
-        from django.utils.safestring import mark_safe
+        no_photo_url = "/content/images/no_photo.jpg"
         return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(no_photo_url))
 
     def image_img(self):
         if self.image:
-            from django.utils.safestring import mark_safe
-            return mark_safe(u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.image.url))
         else:
             return self.image_no_photo()
 

@@ -24,10 +24,10 @@ a {
 
 #header {
     height: 100vh;
-    background-image: url("/content/images/papy.jpg");
+    background-image: url("/content/images/BackGround.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: bottom;
+    background-position: center;
 }
 
 #menu-links {
@@ -92,6 +92,7 @@ a {
     align-items: center;
     padding: 1vw;
     font-family: "Montserrat SemiBold", sans-serif;
+    background: rgba(106, 65, 98, 0.4);
     color: #FED1D1;
     width: 100%;
     bottom: 0;
@@ -161,10 +162,18 @@ a {
     display: flex;
     flex-flow: column;
     width: 100%;
+    transition: all .2s;
 }
 
 .contents:last-child {
     margin-bottom: 2vw;
+}
+
+.contents:hover {
+    background: rgba(254, 209, 209, 0.2);
+    box-shadow: #6A4162 0 0 8px 2px;
+    margin: 30px 0;
+    padding: 0 10px 10px 10px;
 }
 
 .titles {
@@ -175,6 +184,30 @@ a {
 .content {
     display: flex;
     justify-content: space-evenly;
+}
+
+.about-us {
+    display: block;
+    justify-content: space-evenly;
+}
+
+.my-text {
+    min-height: 28vw;
+    margin-bottom: 10px;
+}
+
+.about-us img.MyPhoto {
+    float: left;
+    width: 20vw;
+    height: 27vw;
+    margin-right: 10px;
+}
+
+.about-us img.sert {
+    display: block;
+    margin: auto;
+    width: 30vw;
+    height: 20vw;
 }
 
 .dog {
@@ -207,7 +240,7 @@ img.img-dog {
 
 
 
-.info-dog span#male::after {
+.info-dog span#male::after, .info-dog span#female::after {
     content: "";
     position: absolute;
     width: 1vw;
@@ -219,14 +252,7 @@ img.img-dog {
 }
 
 .info-dog span#female::after {
-    content: "";
-    position: absolute;
-    width: 1vw;
-    height: 1vw;
     background-image: url("/content/images/female.png");
-    background-size: 1vw;
-    background-repeat: no-repeat;
-    margin-left: .3vw;
 }
 
 
