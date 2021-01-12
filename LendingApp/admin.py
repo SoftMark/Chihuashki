@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.contrib import admin
-from .models import Chihuahua, Photo, GalleryImage, AboutUs
+from .models import Chihuahua, Photo, GalleryImage
 from django.utils.safestring import mark_safe
 
 # admin.site.register(Chihuahua)
@@ -72,20 +72,14 @@ class ChihuahuaAdmin(admin.ModelAdmin):
     )
 
 
+
+
 # Галерея
 @admin.register(GalleryImage)
 class GalleryAdmin(admin.ModelAdmin):
     form = PhotoForm
-    list_display = ("image_name", "image_img")
+    list_display = ("image_name", "link", "image_img")
     readonly_fields = ('image_img',)
-
-
-# Блок "О нас"
-@admin.register(AboutUs)
-class GalleryAdmin(admin.ModelAdmin):
-    # form = PhotoForm
-    list_display = ("top_image", "top_paragraph", "bottom_image", "bottom_paragraph")
-    readonly_fields = ('image_get_top', 'image_get_bottom')
 
 
 
