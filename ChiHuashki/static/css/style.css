@@ -217,8 +217,9 @@ a {
     flex-flow: column;
     border: solid .2vw #6A4162;
     border-radius: 1vw;
-    overflow: hidden;
 }
+
+
 
 img.img-dog {
     border-radius: .8vw;
@@ -257,10 +258,32 @@ img.img-dog {
 }
 
 
-.desc-dog {
+.dog .desc-dog {
+    height: 25pt;
     text-align: left;
     font-size: .8vw;
+    overflow: hidden;
+
 }
+
+.dog .bottom-dog {
+    height: 30;
+    position: absolute;
+    top: 1%;
+}
+
+
+.dog:hover {
+    border-radius: 1pt;
+    /* position: absolute; */
+}
+
+.dog:hover .bottom-dog{
+    position: relative;
+    top: 0;
+}
+
+
 
 #topChi {
     position: fixed;
