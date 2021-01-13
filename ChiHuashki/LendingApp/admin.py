@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.contrib import admin
-from .models import Chihuahua, Photo, GalleryImage, AboutUs
+from .models import Chihuahua, Photo, GalleryImage, SiteConfigurations
 from django.utils.safestring import mark_safe
 
 # admin.site.register(Chihuahua)
@@ -75,6 +75,8 @@ class ChihuahuaAdmin(admin.ModelAdmin):
         }),
     )
 
+    list_filter = ('gender', 'age', 'sale', 'name')
+
     def get_img_objs(self, obj):
         pass
 
@@ -97,7 +99,7 @@ class GalleryAdmin(admin.ModelAdmin):
     readonly_fields = ('image_img',)
 
 
-# Блок "О нас"
+# Блок Конфигураций сайта
 class AboutUsPhotoForm(ModelForm):
     MIN_RESOLUTION = (100, 200)
 
@@ -109,13 +111,26 @@ class AboutUsPhotoForm(ModelForm):
             *self.MIN_RESOLUTION)
 
 
-@admin.register(AboutUs)
-class AboutUsAdmin(admin.ModelAdmin):
-    form = AboutUsPhotoForm
+@admin.register(SiteConfigurations)
+class SiteConfigurationsAdmin(admin.ModelAdmin):
+    #form = AboutUsPhotoForm
     save_on_top = True
-    list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
-    readonly_fields = ('image_get_top', 'image_get_bottom', )
+    #list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
 
+    fieldsets = (
+        (None, {
+            'fields': ('name', )
+        }),
+        ('Шапка', {
+            'fields': ('title', 'phone', 'inst', 'facebook', 'header_background')
+        }),
+        ('О нас', {
+            'fields': ("a_us_t_image", "a_us_t_paragraph", "a_us_b_image", "a_us_b_paragraph")
+        }),
+    )
 
+    readonly_fields = ('get_a_us_t_image', 'get_a_us_b_image', )
 
+    def has_add_permission(self, request):
+        return False
 

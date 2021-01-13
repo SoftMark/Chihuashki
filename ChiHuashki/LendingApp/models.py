@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 from django.db.models.signals import pre_save, post_init
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from solo.models import SingletonModel
 
 # class DynamicUploadImageField(models.ImageField):
 #     def __init__(self, *args, **kwargs):
@@ -121,36 +122,61 @@ class Photo(models.Model):
 # class Content(models.Model):
 
 
-class AboutUs(models.Model):
+class SiteConfigurations(SingletonModel):
+    # Main
     name = models.CharField('Название шаблона', max_length=50, default='Основной')
-    top_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery')
-    top_paragraph = models.TextField('Верхний параграф', blank=True)
-    bottom_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery')
-    bottom_paragraph = models.TextField('Нижний параграф', blank=True)
-
-    def image_get_top(self):
-        if self.top_image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
-                self.top_image.url))
-        else:
-            return '(Нет изображения)'
-
-    image_get_top.short_description = 'Верхнее изображение'
-    image_get_top.allow_tags = True
-
-    def image_get_bottom(self):
-        if self.bottom_image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
-                self.bottom_image.url))
-        else:
-            return '(Нет изображения)'
-
-    image_get_bottom.short_description = 'Нижнее изображение'
-    image_get_bottom.allow_tags = True
 
     def __str__(self):
-        return 'Блок "О нас"'
+        return self.name
 
     class Meta:
-        verbose_name = 'Блок "О нас"'
-        verbose_name_plural = 'Блок "О нас"'
+        verbose_name = 'Конфигурации'
+        verbose_name_plural = 'Конфигурации'
+
+    # Header
+    title = models.CharField('Заголовок', max_length=25, default="Выбери себе нового друга!")
+    phone = models.CharField('Номер телефона', max_length=20)
+    inst = models.TextField('Instagram ссылка')
+    facebook = models.TextField('FaceBook ссылка')
+    header_background = models.ImageField(verbose_name='Фон шапки', upload_to='gallery')
+    # header_m_background = models.ImageField(verbose_name='Фон шапки(смартфон)', upload_to='gallery', default=None)
+
+    def header_get_background(self):
+        if self.header_background:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.header_background.url))
+        else:
+            return '(Нет изображения)'
+
+    header_get_background.short_description = 'Верхнее изображение'
+    header_get_background.allow_tags = True
+
+    # About us
+    a_us_t_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery')
+    a_us_t_paragraph = models.TextField('Верхний параграф', blank=True)
+    a_us_b_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery')
+    a_us_b_paragraph = models.TextField('Нижний параграф', blank=True)
+
+    def get_a_us_t_image(self):
+        if self.a_us_t_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.a_us_t_image.url))
+        else:
+            return '(Нет изображения)'
+
+    get_a_us_t_image.short_description = 'Верхнее изображение'
+    get_a_us_t_image.allow_tags = True
+
+    def get_a_us_b_image(self):
+        if self.a_us_b_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.a_us_b_image.url))
+        else:
+            return '(Нет изображения)'
+
+    get_a_us_b_image.short_description = 'Нижнее изображение'
+    get_a_us_b_image.allow_tags = True
+
+
+
+

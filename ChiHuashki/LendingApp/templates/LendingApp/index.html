@@ -6,17 +6,17 @@
     <section class="contents">
         <h2 class="titles" id="about-us">О нас</h2>
         <div class="about-us content">
-            {% if about_us %}
+            {% if config %}
             <div class="my-text">
-                <img class="MyPhoto" src="{{about_us.top_image}}" alt="Женщина с чихуахуа">
+                <img class="MyPhoto" src="{{config.a_us_t_image}}" alt="Женщина с чихуахуа">
                 <p>
-                    {{about_us.top_paragraph}}
+                    {{config.a_us_t_paragraph}}
                 </p>
             </div>
             <div class="my-text">
-                <img class="sert" src="{{about_us.bottom_image}}" alt="Сертификат">
+                <img class="sert" src="{{config.a_us_b_image}}" alt="Сертификат">
                 <p>
-                    {{about_us.bottom_paragraph}}
+                    {{config.a_us_b_paragraph}}
                 </p>
             </div>
             {% else %}
