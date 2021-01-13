@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import Chihuahua, Photo, GalleryImage, SiteConfigurations
 from django.utils.safestring import mark_safe
 
+
 # admin.site.register(Chihuahua)
 
 
@@ -12,10 +13,9 @@ class ChihPhotoForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        #self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(*self.MIN_RESOLUTION)
-        #self.fields['image'].label = 'Загрузите изображение'
+        # self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(*self.MIN_RESOLUTION)
+        # self.fields['image'].label = 'Загрузите изображение'
         print(self.fields)
-
 
 
 class ChihGalleryInline(admin.TabularInline):
@@ -113,24 +113,23 @@ class AboutUsPhotoForm(ModelForm):
 
 @admin.register(SiteConfigurations)
 class SiteConfigurationsAdmin(admin.ModelAdmin):
-    #form = AboutUsPhotoForm
+    # form = AboutUsPhotoForm
     save_on_top = True
-    #list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
+    # list_display = ("name", "image_get_top", "top_paragraph", "image_get_bottom", "bottom_paragraph")
 
     fieldsets = (
         (None, {
-            'fields': ('name', )
+            'fields': ('name',)
         }),
         ('Шапка', {
-            'fields': ('title', 'phone', 'inst', 'facebook', 'header_background')
+            'fields': ("favicon", 'title', 'phone', ('inst', 'facebook'), ('header_background', "header_m_background"))
         }),
         ('О нас', {
             'fields': ("a_us_t_image", "a_us_t_paragraph", "a_us_b_image", "a_us_b_paragraph")
         }),
     )
 
-    readonly_fields = ('get_a_us_t_image', 'get_a_us_b_image', )
+    readonly_fields = ('get_a_us_t_image', 'get_a_us_b_image',)
 
     def has_add_permission(self, request):
         return False
-

@@ -3,7 +3,6 @@ from django.utils.safestring import mark_safe
 from django.db.models.signals import pre_save, post_init
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
-from solo.models import SingletonModel
 
 # class DynamicUploadImageField(models.ImageField):
 #     def __init__(self, *args, **kwargs):
@@ -122,7 +121,10 @@ class Photo(models.Model):
 # class Content(models.Model):
 
 
-class SiteConfigurations(SingletonModel):
+class SiteConfigurations(models.Model):
+    # Favicon
+    favicon = models.ImageField("Favicon", default="/favicon.ico")
+
     # Main
     name = models.CharField('Название шаблона', max_length=50, default='Основной')
 
@@ -136,10 +138,10 @@ class SiteConfigurations(SingletonModel):
     # Header
     title = models.CharField('Заголовок', max_length=25, default="Выбери себе нового друга!")
     phone = models.CharField('Номер телефона', max_length=20)
-    inst = models.TextField('Instagram ссылка')
-    facebook = models.TextField('FaceBook ссылка')
+    inst = models.URLField('Instagram ссылка')
+    facebook = models.URLField('FaceBook ссылка')
     header_background = models.ImageField(verbose_name='Фон шапки', upload_to='gallery')
-    # header_m_background = models.ImageField(verbose_name='Фон шапки(смартфон)', upload_to='gallery', default=None)
+    header_m_background = models.ImageField(verbose_name='Фон шапки(смартфон)', upload_to='gallery', default=None)
 
     def header_get_background(self):
         if self.header_background:
