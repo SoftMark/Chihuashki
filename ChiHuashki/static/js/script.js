@@ -1,4 +1,5 @@
 let butRise = document.getElementById("topChi");
+let contents = document.getElementsByClassName("content");
 
 document.querySelectorAll('a[href^="#"').forEach(link => {
     link.addEventListener("click", function (e) {
@@ -21,21 +22,25 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
     });
 });
 
-document.querySelectorAll(".title").forEach(id => {
-    id.addEventListener("scroll", function (e) {
-        e.preventDefault();
-
-
-    });
-});
+// document.querySelectorAll(".title").forEach(id => {
+//     id.addEventListener("scroll", function (e) {
+//         e.preventDefault();
+//
+//
+//     });
+// });
 
 window.addEventListener("scroll", function() {
     const value = window.scrollY;
 
     if (value >= 300) {
-        butRise.removeAttribute("style")
+        butRise.removeAttribute("style");
     } else if (value === 0){
-        butRise.style.display = "none"
+        butRise.style.display = "none";
     }
 });
+
+// for (let i = 1; i < contents.length-1; i++) {
+//     contents[i].style.maxHeight = contents[i].offsetHeight+"px";
+// };
 
