@@ -153,15 +153,11 @@ a {
 }
 
 #container {
-    display: flex;
-    flex-flow: column;
     margin: 0 10vw;
 }
 
 .contents {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
+    text-align: center;
     padding: 0 10px 10px 10px;
     border-radius: 1vw;
     transition: all .2s;
@@ -180,11 +176,6 @@ a {
 .titles {
     text-align: center;
     padding: 2vw 0;
-}
-
-.content {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .about-us {
@@ -211,19 +202,26 @@ a {
     height: 20vw;
 }
 
+.content {
+    align-self: center;
+    height: 24vmax;
+}
+
 .dog {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
+    display: inline-block;
+    vertical-align: top;
     border: solid .2vw #6A4162;
     border-radius: 1vw;
 }
 
-
+.dog:hover {
+    background-color: #fed1d1;
+}
 
 img.img-dog {
     border-radius: .8vw;
     height: 15vw;
+    width: 20vw;
 }
 
 .info-dog {
@@ -260,30 +258,17 @@ img.img-dog {
 
 .dog .desc-dog {
     height: 25pt;
-    text-align: left;
     font-size: .8vw;
     overflow: hidden;
-
 }
 
 .dog .bottom-dog {
-    height: 30;
-    position: absolute;
-    top: 1%;
-}
-
-
-.dog:hover {
-    border-radius: 1pt;
-    /* position: absolute; */
+    display: none;
 }
 
 .dog:hover .bottom-dog{
-    position: relative;
-    top: 0;
+    display: block;
 }
-
-
 
 #topChi {
     position: fixed;

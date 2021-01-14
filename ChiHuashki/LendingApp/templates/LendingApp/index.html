@@ -5,7 +5,7 @@
 <main id="container">
     <section class="contents">
         <h2 class="titles" id="about-us">О нас</h2>
-        <div class="about-us content">
+        <div class="about-us">
             {% if config.a_us_t_image or config.a_us_t_paragraph or config.a_us_b_image or config.a_us_b_paragraph %}
                 {% if config.a_us_t_image or config.a_us_t_paragraph %}
                 <div class="my-text">
@@ -41,7 +41,7 @@
 
     <section class="contents">
         <h2 class="titles" id="dogs-puppies">Пёсики на продажу</h2>
-        <div class="dogs-to-sale content">
+        <div class="content">
             {% with gender=None age=None sale='yes' %}
             {% include "LendingApp/includes/dog.html" %}
             {% endwith %}
@@ -50,7 +50,7 @@
 
     <section class="contents">
         <h2 class="titles" id="dogs-girls">Наши девочки</h2>
-        <div class="dogs-girls content">
+        <div class="content">
             {% with gender='suka' age=None sale=None %}
             {% include "LendingApp/includes/dog.html" %}
             {% endwith %}
@@ -59,7 +59,7 @@
 
     <section class="contents">
         <h2 class="titles" id="dogs-boys">Наши мальчики</h2>
-        <div class="dogs-boys content">
+        <div class="content">
             {% with gender='kobel' age=None sale=None %}
             {% include "LendingApp/includes/dog.html" %}
             {% endwith %}
@@ -68,7 +68,7 @@
 
     <section class="contents">
         <h2 class="titles" id="dogs-babies">Наши детки</h2>
-        <div class="dogs-babies content">
+        <div class="content">
             {% with gender=None age='puppy' sale=None %}
             {% include "LendingApp/includes/dog.html" %}
             {% endwith %}
@@ -77,7 +77,7 @@
 
     <section class="contents">
         <h2 class="titles" id="photogallery">Фотогалерея</h2>
-        <div class="photogallery content">
+        <div class="photogallery">
             {% if gallery %}
                 {% for image in gallery %}
             <img src='{{image.small_image.url}}' alt='{{image.image_name}}' width='100'>
