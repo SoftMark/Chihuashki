@@ -40,6 +40,15 @@
     </section>
 
     <section class="contents">
+        <h2 class="titles" id="dogs-all">Все Пёсики</h2>
+        <div class="content">
+            {% with gender="all" age="all" sale='all' %}
+            {% include "LendingApp/includes/dog.html" %}
+            {% endwith %}
+        </div>
+    </section>
+
+    <section class="contents">
         <h2 class="titles" id="dogs-puppies">Пёсики на продажу</h2>
         <div class="content">
             {% with gender=None age=None sale='yes' %}
