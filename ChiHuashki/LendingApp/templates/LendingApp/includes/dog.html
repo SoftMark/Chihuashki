@@ -4,7 +4,7 @@
 
 {% if chihuahuas %}
     {% for dog in chihuahuas %}
-        {% if dog.gender == gender or dog.age == age or dog.sale == sale %}
+        {% if dog.gender == gender or dog.age == age or dog.sale == sale or gender == "all" or age == "all" or sale == "all"  %}
         <div class="dog">
             {% if dog.images.all.0 %}
             <img src="{{ dog.images.all.0.small_image }}" alt="{{ dog.name }}" class="img-dog">
