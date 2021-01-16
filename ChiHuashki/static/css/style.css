@@ -156,9 +156,16 @@ a {
     margin: 0 10vw;
 }
 
+.linear {
+    border: none #FED1D1;
+    border-radius: 10vw;
+    border-top-style: solid;
+    margin: 10px 0;
+}
+
 .contents {
     text-align: center;
-    padding: 0 10px 10px 10px;
+    padding: 10px;
     border-radius: 1vw;
     transition: all .2s;
 }
@@ -170,7 +177,6 @@ a {
 .contents:hover {
     background: rgba(254, 209, 209, 0.2);
     box-shadow: 0px 10px 13px -7px #6A4162, 5px 5px 15px 5px rgba(0,0,0,0);
-    margin: 30px 0;
 }
 
 .titles {
@@ -180,24 +186,29 @@ a {
 
 .about-us {
     display: block;
-    justify-content: space-evenly;
 }
 
 .my-text {
     min-height: 28vw;
     margin-bottom: 10px;
+    padding: 0 2vw;
+}
+
+.text-about {
+    display: inline-block;
+    padding: 2vw;
+    text-align: left;
+    vertical-align: top;
+    max-width: 60%;
 }
 
 .about-us img.MyPhoto {
-    float: left;
+    /*float: left;*/
     width: 20vw;
     height: 27vw;
-    margin-right: 10px;
 }
 
 .about-us img.sert {
-    float: right;
-    margin: auto;
     width: 30vw;
     height: 20vw;
 }
@@ -205,6 +216,7 @@ a {
 .content {
     align-self: center;
     height: 24vmax;
+    white-space: nowrap;
 }
 
 .dog {
@@ -257,8 +269,10 @@ img.img-dog {
 
 
 .dog .desc-dog {
+    text-align: left;
     height: 25pt;
     font-size: .8vw;
+    padding: 0 2vw 1vw 2vw;
     overflow: hidden;
 }
 
@@ -266,8 +280,10 @@ img.img-dog {
     display: none;
 }
 
-.dog:hover .bottom-dog{
-    display: block;
+.dog:hover .desc-dog{
+    height: auto;
+    overflow: visible;
+    z-index: 1;
 }
 
 #topChi {
