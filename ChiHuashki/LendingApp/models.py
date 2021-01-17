@@ -42,6 +42,13 @@ class GalleryImage(models.Model):
         else:
             return '(Нет изображения)'
 
+    def small_image_img(self):
+        if self.small_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.small_image.url))
+        else:
+            return '(Нет изображения)'
+
     image_img.short_description = 'Изображение'
     image_img.allow_tags = True
 
@@ -83,6 +90,8 @@ class Chihuahua(models.Model):
         verbose_name_plural = 'Чишки'
 
 
+
+
 class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(verbose_name='Фото', upload_to='photos')
@@ -116,6 +125,12 @@ class Photo(models.Model):
 
     chihuahua = models.ForeignKey(Chihuahua, on_delete=models.CASCADE, related_name='images')
 
+    def small_image_img(self):
+        if self.small_image:
+            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
+                self.small_image.url))
+        else:
+            return '(Нет изображения)'
 
 # Create settings content
 # class Content(models.Model):

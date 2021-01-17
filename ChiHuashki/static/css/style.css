@@ -157,10 +157,15 @@ a {
 }
 
 .linear {
-    border: none #FED1D1;
+    border: none rgba(106, 65, 98, 0.3);
     border-radius: 10vw;
     border-top-style: solid;
+    border-width: 3px;
     margin: 10px 0;
+    margin-top: 25px;
+
+
+
 }
 
 .contents {
@@ -168,6 +173,7 @@ a {
     padding: 10px;
     border-radius: 1vw;
     transition: all .2s;
+    align-items: beetwen-space;
 }
 
 .contents:last-child {
@@ -217,6 +223,9 @@ a {
     align-self: center;
     height: 24vmax;
     white-space: nowrap;
+    text-align-last: justify;
+    padding: 0 5vw;
+
 }
 
 .dog {
@@ -224,6 +233,7 @@ a {
     vertical-align: top;
     border: solid .2vw #6A4162;
     border-radius: 1vw;
+    text-align-last: auto;
 }
 
 .dog:hover {
@@ -270,10 +280,14 @@ img.img-dog {
 
 .dog .desc-dog {
     text-align: left;
-    height: 25pt;
+    height: 30px;
     font-size: .8vw;
     padding: 0 2vw 1vw 2vw;
     overflow: hidden;
+}
+
+.desc-dog a{
+    color: #56348a;
 }
 
 .dog .bottom-dog {
@@ -304,4 +318,12 @@ img.img-dog {
         background-image: url("/content/images/BackGround1.jpg");
         background-position: center;
     }
+}
+
+.photogallery {
+    text-align-last: justify;
+}
+
+.photogallery img {
+    text-align-last: justify;
 }

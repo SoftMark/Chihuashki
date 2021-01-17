@@ -39,7 +39,7 @@ class ChihuahuaAdmin(admin.ModelAdmin):
     def image(self, obj):
         images = list(obj.images.all())
         if images:
-            return images[0].image_img()
+            return images[0].small_image_img()
         else:
             return Photo.image_no_photo()
 
@@ -95,8 +95,17 @@ class GalleryPhotoForm(ModelForm):
 class GalleryAdmin(admin.ModelAdmin):
     save_on_top = True
     form = GalleryPhotoForm
-    list_display = ("image_name", "image_img", "small_image")
+    list_display = ("image_name", "show_image")
     readonly_fields = ('image_img',)
+
+    def show_image(self, obj):
+        if obj.small_image:
+            return obj.small_image_img()
+        else:
+            return Photo.image_no_photo()
+
+    show_image.short_description = 'Фото'
+    show_image.allow_tags = True
 
 
 # Блок Конфигураций сайта
@@ -133,3 +142,5 @@ class SiteConfigurationsAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
+
+
