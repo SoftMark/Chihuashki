@@ -70,8 +70,10 @@ class Chihuahua(models.Model):
     birth_date = models.DateField('Дата рождения')
     age = models.CharField(choices=(('puppy', "щенок"), ('adult', "взрослый")), verbose_name='Щенок/Взрослый',
                            max_length=20, default='adult')
-    sale = models.CharField(choices=(('yes', "да"), ('not', "нет")), verbose_name='Для продажи',
-                            max_length=20, default='yes')
+    sale = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='Для продажи',
+                            max_length=20, default='Да')
+    reserve = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='В резерве',
+                            max_length=20, default='Нет')
     teeth = models.CharField('Зубы', max_length=7)
     weight = models.FloatField('Вес')
     color = models.TextField('Окрас')

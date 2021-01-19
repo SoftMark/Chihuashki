@@ -62,7 +62,7 @@ class ChihuahuaAdmin(admin.ModelAdmin):
                 ("name", "gender"),
                 "rewards",
                 ("birth_date", "age"),
-                "sale",
+                ("sale", "reserve"),
                 "teeth",
                 "weight",
                 ("type_of_wool", "color"),
