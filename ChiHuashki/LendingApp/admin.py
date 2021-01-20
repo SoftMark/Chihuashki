@@ -33,8 +33,8 @@ class ChihuahuaAdmin(admin.ModelAdmin):
 
     inlines = [ChihGalleryInline, ]
 
-    list_display = ("name", 'image', "age", "teeth")
-    readonly_fields = ["get_all_images"]
+    list_display = ("name", 'image', "age", "teeth", "get_small")
+    readonly_fields = ["get_all_images", ]
 
     def image(self, obj):
         images = list(obj.images.all())
@@ -55,6 +55,26 @@ class ChihuahuaAdmin(admin.ModelAdmin):
 
     get_all_images.short_description = 'Фотографии'
     get_all_images.allow_tags = True
+
+    def get_all_images(self, obj):
+        images = list(obj.images.all())
+        collected = []
+        for img in images:
+            collected.append(img.image_img())
+        return mark_safe("".join(collected))
+
+    get_all_images.short_description = 'Фотографии'
+    get_all_images.allow_tags = True
+
+    def get_small(self, obj):
+        images = list(obj.images.all())
+        collected = []
+        for img in images:
+            collected.append(img.small_image_img())
+        return mark_safe("".join(collected))
+
+    get_small.short_description = 's-Фотографии'
+    get_small.allow_tags = True
 
     fieldsets = (
         (None, {
