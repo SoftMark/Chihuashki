@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -10,10 +9,10 @@
     <meta name="description" content="Интернет магазин по продаже чихуахуа">
     <meta property="og:description" content="Интернет магазин по продаже чихуахуа">
     <meta name="keywords" content="купить чихуахуа, чихуахуа, щенки, собаки">
-    <meta property="og:image" content="{% if config.header_background %}{{ config.header_background }}{% else %}{% static '/images/no_photo.jpg' %}{% endif %}">
+    <meta property="og:image" content="{% if config.header_background %}{{ config.header_background }}{% else %}{{ static('images/no_photo.jpg') }}{% endif %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="{% if config.favicon %}{{ config.favicon }}{% else %}{% static '/images/favicon.ico' %}{% endif %}" rel="icon">
-    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% if config.favicon %}{{ config.favicon }}{% else %}{{ static('images/favicon.ico') }}{% endif %}" rel="icon">
+    <link href="{{ static('/css/style.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="page">
@@ -36,6 +35,6 @@
             </div>
         </footer>
     </div>
-    <script src="{% static '/js/script.js' %}"></script>
+    <script src="{{ static('/js/script.js') }}"></script>
 </body>
 </html>
