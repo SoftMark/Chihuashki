@@ -6,6 +6,7 @@
     {% if dog.age == age or age == "all" %}
     {% if dog.sale == sale or sale == "all" %}
     <div class="dog">
+
         {% if dog.images.all.0 %}
         <img src="{{ dog.images.all.0.small_image }}" alt="{{ dog.name }}" class="img-dog">
         {% else %}
