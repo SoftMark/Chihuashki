@@ -1,0 +1,44 @@
+{% if chihuahuas %}
+    {% for dog in chihuahuas %}
+        {% if (dog.gender == gender or gender == "all") and (dog.age == age or age == "all") and (dog.sale == sale or sale == "all") %}
+        <div class="dog">
+            <div class="images">
+            {% if dog.images.all() %}
+                <div class="img-line">
+                    {% for img in dog.images.all() %}
+                    <img src="{{ img.small_image }}" alt="{{ dog.name }}" class="img-dog">
+{#                    <img src="{{ dog.images.all()[0].small_image }}" alt="{{ dog.name }}" class="img-dog">#}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <img src="{{ static('images/no_photo.jpg') }}" alt="{{ dog.name }}" class="img-dog">
+            {% endif %}
+            </div>
+
+            <div class="info-dog">
+
+                {% if dog.gender == 'suka' %}
+                <span class="female">{{ dog.name }}</span>
+                {% else %}
+                <span class="male">{{ dog.name }}</span>
+                {% endif %}
+
+
+                <div class="desc-dog">
+                    <p>На продажу: <b>{{ dog.sale }}</b></p>
+                    <p>В резерве: <b>{{ dog.reserve }}</b></p>
+                    <p>Зубки: <b>{{ dog.teeth }}</b></p>
+                    <p>Окрас: <b>{{ dog.color }}</b></p>
+                    <p>Дата рождения: <b>{{ dog.birth_date }}</b></p>
+                    <p>Папа: <b>{{ dog.father }}</b></p>
+                    <p>Мама: <b>{{ dog.mother }}</b></p>
+                    <p>Родословная: <b><a href="{{ dog.pedigree_link }}">{{ dog.pedigree }}</a></b></p>
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <p>Нет собак</p>
+{% endif %}
