@@ -4,6 +4,7 @@ from django.db.models.signals import pre_save, post_init
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
+
 # class DynamicUploadImageField(models.ImageField):
 #     def __init__(self, *args, **kwargs):
 #         # Increase max length to support longer filenames
@@ -73,7 +74,7 @@ class Chihuahua(models.Model):
     sale = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='Для продажи',
                             max_length=20, default='Да')
     reserve = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='В резерве',
-                            max_length=20, default='Нет')
+                               max_length=20, default='Нет')
     teeth = models.CharField('Зубы', max_length=7)
     weight = models.FloatField('Вес')
     color = models.TextField('Окрас')
@@ -92,8 +93,6 @@ class Chihuahua(models.Model):
         verbose_name_plural = 'Чишки'
 
 
-
-
 class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(verbose_name='Фото', upload_to='photos')
@@ -107,12 +106,6 @@ class Photo(models.Model):
     #     instance_name = self.chihuahua.name
     #     return "{}/{}".format(class_name, instance_name)
 
-    # If non photo change photo no_photo.jpg
-    def get_url(self):
-        if not self.image:
-            return "/static/LendingApp/images/no_photo.jpg"
-        return self.image.url
-
     @classmethod
     def image_no_photo(cls):
         no_photo_url = "/content/images/no_photo.jpg"
@@ -120,8 +113,7 @@ class Photo(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(u'<a class="all-photo" href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(
-                self.image.url))
+            return mark_safe(f'<a class="all-photo" href="{self.image.url}" target="_blank"><img src="{self.small_image.url}" width="100"/></a>')
         else:
             return self.image_no_photo()
 
@@ -133,6 +125,7 @@ class Photo(models.Model):
                 self.small_image.url))
         else:
             return '(Нет изображения)'
+
 
 # Create settings content
 # class Content(models.Model):
@@ -195,7 +188,3 @@ class SiteConfigurations(models.Model):
 
     get_a_us_b_image.short_description = 'Нижнее изображение'
     get_a_us_b_image.allow_tags = True
-
-
-
-

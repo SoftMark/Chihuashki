@@ -1,18 +1,38 @@
 let butRise = document.getElementById("topChi");
 let contents = document.getElementsByClassName("content");
+let count = 0;
+let width;
+
+
+// document.querySelectorAll('.images').forEach(dog => {
+//     dog.addEventListener("mouseover", function (e) {
+//         e.preventDefault();
+//
+//         init(this);
+//
+//     });
+// });
+
+function init(photo){
+    let dog_line = photo.querySelector('.img-line');
+    let dog_images = photo.querySelectorAll('.img-dog');
+    console.log("resize");
+    width = photo.offsetWidth;
+    if (dog_line)
+        dog_line.style.width = width * dog_images.length + "px";
+    console.log(width);
+    console.log(dog_line);
+    console.log(dog_images);
+}
 
 document.querySelectorAll('a[href^="#"').forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
 
         let href = this.getAttribute("href").substring(1);
-
         const scrollTarget = document.getElementById(href);
-
         const topOffset = document.querySelector("#menu-links").offsetHeight;
-
         const elementPosition = scrollTarget.getBoundingClientRect().top;
-
         const offsetPosition = elementPosition - topOffset;
 
         window.scrollBy({

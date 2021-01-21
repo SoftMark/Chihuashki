@@ -62,7 +62,7 @@ TEMPLATES = [
                 "environment": "ChiHuashki.jinja2.environment",
                 "match_extension": ".html",
                 # 'autoescape': False,  # !!!!!!
-                "app_dirname": "templates",
+                "app_dirname": "jinja2",
                 "translation_engine": "django.utils.translation",
                 "context_processors": [
                     "django.contrib.auth.context_processors.auth",

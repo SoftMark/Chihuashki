@@ -9,11 +9,11 @@ from django.utils.safestring import mark_safe
 
 # Чишки
 class ChihPhotoForm(ModelForm):
-    MIN_RESOLUTION = (100, 200)
+    MIN_RES = (100, 200)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(*self.MIN_RESOLUTION)
+        # self.fields['image'].help_text = 'Загрузите изображение с минимальным разрешением {}x{}'.format(*self.MIN_RES)
         # self.fields['image'].label = 'Загрузите изображение'
         print(self.fields)
 
@@ -23,7 +23,6 @@ class ChihGalleryInline(admin.TabularInline):
     fk_name = 'chihuahua'
     model = Photo
     extra = 1  # количество пустых форм
-    max_num = 5  # максимальное количество форм
     verbose_name = 'image'
 
 
@@ -33,13 +32,16 @@ class ChihuahuaAdmin(admin.ModelAdmin):
 
     inlines = [ChihGalleryInline, ]
 
-    list_display = ("name", 'image', "age", "teeth", "get_small")
+    # Добавляет поисковик по именам
+    search_fields = ("name",)
+    # Выбераешь какие поля должны выводится
+    list_display = ("name", 'image', "age", "teeth", "get_all_images")
     readonly_fields = ["get_all_images", ]
 
     def image(self, obj):
         images = list(obj.images.all())
         if images:
-            return images[0].small_image_img()
+            return images[0].image_img()
         else:
             return Photo.image_no_photo()
 
@@ -48,33 +50,10 @@ class ChihuahuaAdmin(admin.ModelAdmin):
 
     def get_all_images(self, obj):
         images = list(obj.images.all())
-        collected = []
-        for img in images:
-            collected.append(img.image_img())
-        return mark_safe("".join(collected))
+        return mark_safe("".join([img.image_img() for img in images]))
 
     get_all_images.short_description = 'Фотографии'
     get_all_images.allow_tags = True
-
-    def get_all_images(self, obj):
-        images = list(obj.images.all())
-        collected = []
-        for img in images:
-            collected.append(img.image_img())
-        return mark_safe("".join(collected))
-
-    get_all_images.short_description = 'Фотографии'
-    get_all_images.allow_tags = True
-
-    def get_small(self, obj):
-        images = list(obj.images.all())
-        collected = []
-        for img in images:
-            collected.append(img.small_image_img())
-        return mark_safe("".join(collected))
-
-    get_small.short_description = 's-Фотографии'
-    get_small.allow_tags = True
 
     fieldsets = (
         (None, {
@@ -95,7 +74,7 @@ class ChihuahuaAdmin(admin.ModelAdmin):
         }),
     )
 
-    list_filter = ('gender', 'age', 'sale', 'name')
+    list_filter = ('gender', 'age', 'sale')
 
     def get_img_objs(self, obj):
         pass

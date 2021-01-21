@@ -240,10 +240,21 @@ a {
     background-color: #fed1d1;
 }
 
-img.img-dog {
+.images {
     border-radius: .8vw;
     height: 15vw;
     width: 20vw;
+    overflow: hidden;
+}
+
+.img-line {
+    height: 100%;
+    transition: all ease 1s;
+}
+
+img.img-dog {
+    width: 100%;
+    height: 100%;
 }
 
 .info-dog {
