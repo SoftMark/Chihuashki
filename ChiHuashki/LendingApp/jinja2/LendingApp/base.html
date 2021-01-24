@@ -1,0 +1,23 @@
+{% block head %}
+{% include "LendingApp/includes/head.html" %}
+{% endblock %}
+
+<body>
+    <div id="page">
+        {% block header %}
+        {% include "LendingApp/includes/header.html" %}
+        {% endblock %}
+
+        {% block content %}
+        {% include "LendingApp/includes/content.html" %}
+        {% endblock %}
+
+        {% block footer %}
+        {% include "LendingApp/includes/footer.html" %}
+        {% endblock %}
+    </div>
+
+    {% block scripts %}
+    <script src="{{ static('/js/script.js') }}"></script>
+    {% endblock %}
+</body>

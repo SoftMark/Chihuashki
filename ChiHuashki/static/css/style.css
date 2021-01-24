@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: #6A4162;
     background-color: #D46A92;
@@ -28,6 +32,10 @@ a {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+}
+
+#topChi {
+    display: none;
 }
 
 #menu-links {
@@ -157,23 +165,18 @@ a {
 }
 
 .linear {
-    border: none rgba(106, 65, 98, 0.3);
     border-radius: 10vw;
+    border: 3px none rgba(106, 65, 98, 0.3);
     border-top-style: solid;
-    border-width: 3px;
-    margin: 10px 0;
-    margin-top: 25px;
-
+    margin: 25px 0 10px;
 
 
 }
 
 .contents {
     text-align: center;
-    padding: 10px;
     border-radius: 1vw;
     transition: all .2s;
-    align-items: beetwen-space;
 }
 
 .contents:last-child {
@@ -183,6 +186,13 @@ a {
 .contents:hover {
     background: rgba(254, 209, 209, 0.2);
     box-shadow: 0px 10px 13px -7px #6A4162, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.label {
+    display: block;
+    position: relative;
+    top: -5vw;
+    visibility: hidden;
 }
 
 .titles {
@@ -220,17 +230,36 @@ a {
 }
 
 .content {
-    align-self: center;
+    display: flex;
     height: 24vmax;
-    white-space: nowrap;
-    text-align-last: justify;
-    padding: 0 5vw;
+    justify-content: center;
+    padding-bottom: 2vw;
+}
 
+/*.dog-slide {*/
+/*    cursor: pointer;*/
+/*    width: 5vw;*/
+/*}*/
+
+/*.dog-previous {*/
+/*    transform: rotate(180deg);*/
+/*}*/
+
+.list-dogs {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 23vw);
+    grid-row-gap: 2vw;
+    overflow: hidden;
+}
+
+.list-dog {
+    display: inline-block;
+    vertical-align: top;
+    width: 20.4vw;
 }
 
 .dog {
-    display: inline-block;
-    vertical-align: top;
     border: solid .2vw #6A4162;
     border-radius: 1vw;
     text-align-last: auto;
@@ -238,16 +267,41 @@ a {
 
 .dog:hover {
     background-color: #fed1d1;
+    position: absolute;
+    transform: scale(1.05);
 }
 
 .images {
+    position: relative;
     border-radius: .8vw;
     height: 15vw;
     width: 20vw;
     overflow: hidden;
 }
 
+.arrow-dog {
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+    height: 2vw;
+    top: 40%;
+}
+
+.images:hover .arrow-dog {
+    visibility: visible;
+}
+
+.next-img {
+    right: 0;
+}
+
+.previous-img {
+    left: 0;
+    transform: rotate(180deg);
+}
+
 .img-line {
+    display: flex;
     height: 100%;
     transition: all ease 1s;
 }
@@ -264,28 +318,16 @@ img.img-dog {
 .info-dog span {
     display: inline-block;
     margin: 1vw;
-    padding: .4vw 2vw .4vw .4vw;
+    padding: .4vw;
     background-color: #FED1D1;
     border: solid .2vw;
     border-radius: .6vw;
     font-size: 1vw;
 }
 
-
-
-.info-dog span.male::after, .info-dog span.female::after {
-    content: "";
-    position: absolute;
+.info-dog span img {
     width: 1vw;
     height: 1vw;
-    background-image: url("/content/images/male.png");
-    background-size: 1vw;
-    background-repeat: no-repeat;
-    margin-left: .5vw;
-}
-
-.info-dog span.female::after {
-    background-image: url("/content/images/female.png");
 }
 
 
@@ -311,6 +353,53 @@ img.img-dog {
     z-index: 1;
 }
 
+.photogallery {
+    position: relative;
+    padding: 0 2vw 2vw;
+}
+
+.gallery {
+    width: 68vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+.gallery-list {
+    white-space: nowrap;
+    height: 15vw;
+}
+
+.block-img {
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    width: 20.4vw;
+    margin: 0 1vw;
+}
+
+.block-img img {
+    border: solid .2vw #6A4162;
+    border-radius: 1vw;
+}
+
+.block-img img:hover {
+    position: absolute;
+    transform: scale(1.05);
+}
+
+.gallery-arrow {
+    position: absolute;
+    width: 5vw;
+    top: 25%;
+    right: 0;
+    cursor: pointer;
+}
+
+.gallery-previous {
+    transform: rotate(180deg);
+    left: 0;
+}
+
 #topChi {
     position: fixed;
     right: 45px;
@@ -329,12 +418,4 @@ img.img-dog {
         background-image: url("/content/images/BackGround1.jpg");
         background-position: center;
     }
-}
-
-.photogallery {
-    text-align-last: justify;
-}
-
-.photogallery img {
-    text-align-last: justify;
 }
