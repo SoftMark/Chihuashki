@@ -9,6 +9,7 @@ def environment(**options):
         "static": staticfiles_storage.url,
         "url": reverse,
         "dir": dir,
+        "len": len,
         "character": {
             "На продажу": "sale",
             "В резерве": "reserve",

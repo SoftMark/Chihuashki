@@ -6,7 +6,7 @@ let butRise = document.getElementById("topChi"),
     categoryContent = document.querySelectorAll(".content"),
     count = 0,
     countGallery = 0,
-    width,
+    width;
     intervalSlide = setInterval(autoSlide, 5000);
 
 // Scroll slow
@@ -61,8 +61,9 @@ imagesDog.forEach(img => {
             e.preventDefault();
 
             let images = img.querySelector(".img-line"),
-                imgCol = images.querySelectorAll("img").length,
-                imgWidth = 20;
+                image = images.querySelectorAll("img"),
+                imgCol = image.length,
+                imgWidth = 100;
 
 
             if (this.classList[1] == "previous-img") {
@@ -76,7 +77,7 @@ imagesDog.forEach(img => {
                     count = 0;
                 }
             }
-            images.style.transform = "translate(-"+count*imgWidth+"vw)";
+            images.style.transform = "translate(-"+count*imgWidth+"%)";
         });
     });
 });
@@ -84,13 +85,14 @@ imagesDog.forEach(img => {
 function autoSlide(){
     let images = document.querySelector(".gallery-list"),
         imgCol = images.querySelectorAll(".block-img").length,
-        imgWidth = 22.7;
+        imgWidth = 33.3;
+    // 22.7
 
     countGallery++;
     if (countGallery > imgCol - 3){
         countGallery = 0;
     }
-    images.style.transform = "translate(-"+countGallery*imgWidth+"vw)";
+    images.style.transform = "translate(-"+countGallery*imgWidth+"%)";
 }
 
 // Slide gallery dog
@@ -99,8 +101,8 @@ document.querySelectorAll(".gallery-arrow").forEach( arrow => {
         e.preventDefault();
 
         let images = document.querySelector(".gallery-list"),
-            imgCol = images.querySelectorAll(".block-img").length,
-            imgWidth = 22.7;
+        imgCol = images.querySelectorAll(".block-img").length,
+        imgWidth = 33.3;
 
 
         if (this.classList[1] == "gallery-previous") {
@@ -114,7 +116,7 @@ document.querySelectorAll(".gallery-arrow").forEach( arrow => {
                 countGallery = 0;
             }
         }
-        images.style.transform = "translate(-"+countGallery*imgWidth+"vw)";
+        images.style.transform = "translate(-"+countGallery*imgWidth+"%)";
     });
 });
 

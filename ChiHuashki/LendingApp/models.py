@@ -97,6 +97,11 @@ class Photo(models.Model):
     # image = DynamicUploadImageField(blank=True)
     image = models.ImageField(verbose_name='Фото', upload_to='photos')
     small_image = ImageSpecField(source='image',
+                                 processors=[ResizeToFill(800, 600)],
+                                 format='JPEG',
+                                 options={'quality': 60})
+
+    thumb_image = ImageSpecField(source='image',
                                  processors=[ResizeToFill(300, 200)],
                                  format='JPEG',
                                  options={'quality': 60})
