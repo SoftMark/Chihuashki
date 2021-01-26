@@ -1,5 +1,7 @@
 {% if chihuahuas %}
 {#    <img class="dog-slide dog-previous" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">#}
+    <span class="but-all open-dogs">Показать</span>
+    <span class="but-all close-dogs">Скрыть</span>
     <ul class="list-dogs">
         {% for dog in chihuahuas %}
             {% if (dog.gender == gender or gender == "all") and (dog.age == age or age == "all") and (dog.sale == sale or sale == "all") %}

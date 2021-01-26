@@ -5,7 +5,8 @@ let butRise = document.getElementById("topChi"),
     imagesDog = document.querySelectorAll(".images"),
     count = 0,
     countGallery = 0,
-    width;
+    width,
+    intervalSlide = setInterval(autoSlide(), 2000);
 
 // Scroll slow
 // document.querySelectorAll('a[href^="#"').forEach(link => {
@@ -54,6 +55,17 @@ imagesDog.forEach(img => {
     });
 });
 
+function autoSlide(){
+    let images = document.querySelector(".gallery-list"),
+        imgCol = images.querySelectorAll(".block-img").length,
+        imgWidth = 22.7;
+
+    countGallery++;
+    if (countGallery > imgCol - 3){
+        countGallery = 0;
+    }
+    images.style.transform = "translate(-"+countGallery*imgWidth+"vw)";
+}
 
 // Slide gallery dog
 document.querySelectorAll(".gallery-arrow").forEach( arrow => {
@@ -68,15 +80,14 @@ document.querySelectorAll(".gallery-arrow").forEach( arrow => {
         if (this.classList[1] == "gallery-previous") {
             countGallery--;
             if (countGallery < 0){
-                countGallery = imgCol - 1;
+                countGallery = imgCol - 3;
             }
         } else {
             countGallery++;
-            if (countGallery > imgCol - 1){
+            if (countGallery > imgCol - 3){
                 countGallery = 0;
             }
         }
-        console.log(countGallery);
         images.style.transform = "translate(-"+countGallery*imgWidth+"vw)";
     });
 });

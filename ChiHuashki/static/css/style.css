@@ -231,7 +231,7 @@ a {
 
 .content {
     display: flex;
-    height: 24vmax;
+    position: relative;
     justify-content: center;
     padding-bottom: 2vw;
 }
@@ -245,9 +245,17 @@ a {
 /*    transform: rotate(180deg);*/
 /*}*/
 
+.but-all {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    visibility: hidden;
+}
+
 .list-dogs {
     display: grid;
     justify-items: center;
+    height: 22vmax;
     grid-template-columns: repeat(3, 23vw);
     grid-row-gap: 2vw;
     overflow: hidden;
@@ -263,6 +271,7 @@ a {
     border: solid .2vw #6A4162;
     border-radius: 1vw;
     text-align-last: auto;
+    z-index: 1;
 }
 
 .dog:hover {
@@ -367,17 +376,19 @@ img.img-dog {
 .gallery-list {
     white-space: nowrap;
     height: 15vw;
+    transition: 1s;
 }
 
 .block-img {
     display: inline-block;
-    vertical-align: top;
     text-align: justify;
+    vertical-align: top;
     width: 20.4vw;
-    margin: 0 1vw;
+    margin: 1vw 1vw 0;
 }
 
 .block-img img {
+    width: 20vw;
     border: solid .2vw #6A4162;
     border-radius: 1vw;
 }
