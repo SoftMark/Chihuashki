@@ -1,3 +1,8 @@
+:root {
+    --width-dog: 24vw;
+    --width-cont-dog: 24.4vw;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -262,8 +267,8 @@ a {
 .list-dogs {
     display: grid;
     justify-items: center;
-    height: 22vmax;
-    grid-template-columns: repeat(3, 23vw);
+    height: 23vw;
+    grid-template-columns: repeat(3, 26vw);
     grid-row-gap: 2vw;
     overflow: hidden;
     transition: 1s;
@@ -272,7 +277,7 @@ a {
 .list-dog {
     display: inline-block;
     vertical-align: top;
-    width: 20.4vw;
+    width: var(--width-cont-dog);
 }
 
 .dog {
@@ -283,6 +288,7 @@ a {
 }
 
 .dog:hover {
+    width: var(--width-cont-dog);
     background-color: #fed1d1;
     position: absolute;
     transform: scale(1.05);
@@ -291,8 +297,6 @@ a {
 .images {
     position: relative;
     border-radius: .8vw;
-    height: 15vw;
-    width: 20vw;
     overflow: hidden;
 }
 
@@ -319,7 +323,6 @@ a {
 
 .img-line {
     display: flex;
-    height: 100%;
     transition: all ease 1s;
 }
 
@@ -330,6 +333,7 @@ img.img-dog {
 
 .info-dog {
     text-align: center;
+    max-width: var(--width-dog);
 }
 
 .info-dog span {
@@ -349,32 +353,33 @@ img.img-dog {
 
 
 .dog .desc-dog {
+    display: none;
     text-align: left;
-    height: 30px;
     font-size: 1.1vw;
     padding: 0 2vw 1vw 2vw;
-    overflow: hidden;
-
 }
 
 
-.field-icon{
+.field-icon {
     width: 1.5vw;
     height: 1.5vw;
 }
 
 
-.desc-dog a{
+.desc-dog a {
     color: #56348a;
+}
+
+.desc-dog p {
+    margin: 1vw 0;
 }
 
 .dog .bottom-dog {
     display: none;
 }
 
-.dog:hover .desc-dog{
-    height: auto;
-    overflow: visible;
+.dog:hover .desc-dog {
+    display: inline-block;
     z-index: 1;
 }
 
@@ -442,7 +447,6 @@ img.img-dog {
 
 @media (max-width: 400px) {
     #header {
-        background-image: url("/content/images/BackGround1.jpg");
         background-position: center;
     }
 }

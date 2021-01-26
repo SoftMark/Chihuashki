@@ -18,7 +18,9 @@
                                 <img class="arrow-dog previous-img" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">
                                 <img class="arrow-dog next-img" src="{{ static('images/arrow_right.svg') }}" alt="Следующая">
                             {% else %}
-                                <img src="{{ static('images/no_photo.jpg') }}" alt="{{ dog.name }}" class="img-dog">
+                                <div class="img-line">
+                                    <img src="{{ static('images/no_photo.jpg') }}" alt="{{ dog.name }}" class="img-dog">
+                                </div>
                             {% endif %}
                         </div>
 
@@ -26,24 +28,17 @@
 
                             <span class="{{ dog.gender }}">
                                 {{ dog.name }}
-                                <img src="/content/images/icons/{{ dog.gender }}.png" alt="{{ dog.gender }}">
+                                <img src="{{ static('/images/icons/'+dog.gender+'.png') }}" alt="{{ dog.gender }}">
                             </span>
                             <div class="desc-dog">
                                 {% for charact in character %}
                                     <p>
-                                        <img class='field-icon' src="/content/images/icons/{{ character[charact] }}.png" alt="not found!">
+                                        <img class='field-icon' src="{{ static('/images/icons/'+character[charact]+'.png') }}" alt="{{ charact }}">
                                         {{ charact }}: <b>{{ dog[character[charact]] }}</b>
                                     </p>
-{#                                    <p>На продажу: <b>{{ dog.sale }}</b></p>#}
-{#                                    <p>В резерве: <b>{{ dog.reserve }}</b></p>#}
-{#                                    <p>Зубки: <b>{{ dog.teeth }}</b></p>#}
-{#                                    <p>Окрас: <b>{{ dog.color }}</b></p>#}
-{#                                    <p>Дата рождения: <b>{{ dog.birth_date }}</b></p>#}
-{#                                    <p>Папа: <b>{{ dog.father }}</b></p>#}
-{#                                    <p>Мама: <b>{{ dog.mother }}</b></p>#}
                                 {% endfor %}
                                 <p>
-                                    <img class='field-icon' src="/content/images/icons/pedigree.png" alt="not found"/>
+                                    <img class='field-icon' src="{{ static('/images/icons/pedigree.png') }}" alt="Родословная"/>
                                     Родословная: <b><a href="{{ dog.pedigree_link }}">{{ dog.pedigree }}</a></b>
                                 </p>
                             </div>
