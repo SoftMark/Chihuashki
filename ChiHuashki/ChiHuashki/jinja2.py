@@ -9,15 +9,6 @@ def environment(**options):
         "static": staticfiles_storage.url,
         "url": reverse,
         "dir": dir,
-        "character": {
-            "На продажу": "sale",
-            "В резерве": "reserve",
-            "Зубки": "teeth",
-            "Окрас": "color",
-            "Дата рождения": "birth_date",
-            "Папа": "father",
-            "Мама": "mother",
-            "Родословная": "pedigree",
-        },
+        "len": len,
     })
     return env

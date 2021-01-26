@@ -82,7 +82,7 @@ class Chihuahua(models.Model):
     father = models.CharField('Папа', max_length=50)
     mother = models.CharField('Мама', max_length=50)
     pedigree = models.CharField('Родословная', max_length=50)
-    pedigree_link = models.URLField('Ссылка на родословную')
+    pedigree_link = models.TextField('Ссылка на родословную')
     video = models.FileField(upload_to='videos', null=True, verbose_name='Видео', blank=True)
 
     def __str__(self):
