@@ -17,7 +17,6 @@ def environment(**options):
             "Дата рождения": "birth_date",
             "Папа": "father",
             "Мама": "mother",
-            "Родословная": "pedigree",
         },
     })
     return env

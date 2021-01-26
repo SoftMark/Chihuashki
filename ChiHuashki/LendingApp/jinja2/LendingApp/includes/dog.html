@@ -26,11 +26,14 @@
 
                             <span class="{{ dog.gender }}">
                                 {{ dog.name }}
-                                <img src="/content/images/{{ dog.gender }}.png" alt="{{ dog.gender }}">
+                                <img src="/content/images/icons/{{ dog.gender }}.png" alt="{{ dog.gender }}">
                             </span>
                             <div class="desc-dog">
                                 {% for charact in character %}
-                                    <p>{{ charact }}: <b>{{ dog[character[charact]] }}</b></p>
+                                    <p>
+                                        <img class='field-icon' src="/content/images/icons/{{ character[charact] }}.png" alt="not found!">
+                                        {{ charact }}: <b>{{ dog[character[charact]] }}</b>
+                                    </p>
 {#                                    <p>На продажу: <b>{{ dog.sale }}</b></p>#}
 {#                                    <p>В резерве: <b>{{ dog.reserve }}</b></p>#}
 {#                                    <p>Зубки: <b>{{ dog.teeth }}</b></p>#}
@@ -38,8 +41,11 @@
 {#                                    <p>Дата рождения: <b>{{ dog.birth_date }}</b></p>#}
 {#                                    <p>Папа: <b>{{ dog.father }}</b></p>#}
 {#                                    <p>Мама: <b>{{ dog.mother }}</b></p>#}
-{#                                    <p>Родословная: <b><a href="{{ dog.pedigree_link }}">{{ dog.pedigree }}</a></b></p>#}
                                 {% endfor %}
+                                <p>
+                                    <img class='field-icon' src="/content/images/icons/pedigree.png" alt="not found"/>
+                                    Родословная: <b><a href="{{ dog.pedigree_link }}">{{ dog.pedigree }}</a></b>
+                                </p>
                             </div>
 
                         </div>

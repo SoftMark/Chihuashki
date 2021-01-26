@@ -351,10 +351,18 @@ img.img-dog {
 .dog .desc-dog {
     text-align: left;
     height: 30px;
-    font-size: .8vw;
+    font-size: 1.1vw;
     padding: 0 2vw 1vw 2vw;
     overflow: hidden;
+
 }
+
+
+.field-icon{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
 
 .desc-dog a{
     color: #56348a;
@@ -438,3 +446,4 @@ img.img-dog {
         background-position: center;
     }
 }
+
