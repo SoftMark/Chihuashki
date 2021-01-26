@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ChiHuashki</title>
     <meta property="og:title" content="ChiHuashki">
-<!--    <base href="/">-->  <!-- нужно для определения базового href -->
+{#    <base href="/"> нужно для определения базового href#}
     <meta name="description" content="Интернет магазин по продаже чихуахуа">
     <meta property="og:description" content="Интернет магазин по продаже чихуахуа">
     <meta name="keywords" content="купить чихуахуа, чихуахуа, щенки, собаки">
@@ -14,27 +14,3 @@
     <link href="{% if config.favicon %}{{ config.favicon }}{% else %}{{ static('images/favicon.ico') }}{% endif %}" rel="icon">
     <link href="{{ static('/css/style.css') }}" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <div id="page">
-
-        {% include "LendingApp/includes/header.html" %}
-
-        {% block content %}
-
-        {% endblock %}
-
-
-
-        <a class="navigate" id="topChi" href="#header" style="display: none" title="Вернуться к началу страницы">Вверх</a>
-
-        <footer>
-            <div class="copyright">
-                <div class="container">
-                    ChiHuashki.com.ua © 2021
-                </div>
-            </div>
-        </footer>
-    </div>
-    <script src="{{ static('/js/script.js') }}"></script>
-</body>
-</html>

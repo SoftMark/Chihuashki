@@ -9,5 +9,6 @@ def environment(**options):
         "static": staticfiles_storage.url,
         "url": reverse,
         "dir": dir,
+        "len": len,
     })
     return env

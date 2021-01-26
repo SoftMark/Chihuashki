@@ -32,7 +32,7 @@ class GalleryImage(models.Model):
     image_name = models.CharField('Название картинки', max_length=50)
     image = models.ImageField(verbose_name='Изображение', upload_to='gallery', default=None)
     small_image = ImageSpecField(source='image',
-                                 processors=[ResizeToFill(100, 100)],
+                                 processors=[ResizeToFill(300, 200)],
                                  format='JPEG',
                                  options={'quality': 60})
 
@@ -64,8 +64,8 @@ class GalleryImage(models.Model):
 # Create your models here.
 class Chihuahua(models.Model):
     name = models.CharField('Имя', max_length=50)
-    gender = models.CharField(choices=(('suka', "сука"), ('kobel', "кобель")), verbose_name='Пол', max_length=20,
-                              default='suka')
+    gender = models.CharField(choices=(('female', "сука"), ('male', "кобель")), verbose_name='Пол', max_length=20,
+                              default='female')
     rewards = models.TextField('Награды')
 
     birth_date = models.DateField('Дата рождения')
