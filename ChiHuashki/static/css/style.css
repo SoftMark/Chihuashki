@@ -78,18 +78,22 @@ a {
     align-self: center;
 }
 
-.nav-main li a {
+.navigate {
+	user-select: none;
+}
+
+.nav-main .navigate {
     margin: 0 0.7vw;
     padding: 0.4vw 0;
     transition: all .1s, border-radius step-start;
-}
-
-.nav-main li a:hover {
-    border: solid .2vw;
     border-radius: 2vw;
 }
 
-.nav-main li a:active {
+.nav-main .navigate:hover {
+    border: solid .2vw;
+}
+
+.nav-main .navigate:active {
     background-color: #FED1D1;
 }
 
@@ -233,7 +237,7 @@ a {
     display: flex;
     position: relative;
     justify-content: center;
-    padding-bottom: 2vw;
+    padding-bottom: 3vw;
 }
 
 /*.dog-slide {*/
@@ -250,6 +254,8 @@ a {
     bottom: 0;
     cursor: pointer;
     visibility: hidden;
+    margin-bottom: 1vw;
+    user-select: none;
 }
 
 .list-dogs {
@@ -259,6 +265,7 @@ a {
     grid-template-columns: repeat(3, 23vw);
     grid-row-gap: 2vw;
     overflow: hidden;
+    transition: 1s;
 }
 
 .list-dog {

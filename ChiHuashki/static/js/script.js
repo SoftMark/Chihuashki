@@ -3,10 +3,11 @@ let butRise = document.getElementById("topChi"),
     arrowNext = document.getElementById("next-img"),
     contents = document.getElementsByClassName("content"),
     imagesDog = document.querySelectorAll(".images"),
+    categoryContent = document.querySelectorAll(".content"),
     count = 0,
     countGallery = 0,
     width,
-    intervalSlide = setInterval(autoSlide(), 2000);
+    intervalSlide = setInterval(autoSlide, 5000);
 
 // Scroll slow
 // document.querySelectorAll('a[href^="#"').forEach(link => {
@@ -25,6 +26,31 @@ let butRise = document.getElementById("topChi"),
 //         });
 //     });
 // });
+
+// button see all dogs
+categoryContent.forEach(categoryDog => {
+    let conteinerDogs = categoryDog.querySelector(".list-dogs"),
+        listDogs = categoryDog.querySelectorAll(".list-dog"),
+        openBut = categoryDog.querySelector(".open-dogs"),
+        closeBut = categoryDog.querySelector(".close-dogs");
+
+    if (listDogs.length > 3){
+        openBut.style.visibility = "visible";
+    }
+
+    openBut.addEventListener("click", function (e) {
+        let heightConteiner = conteinerDogs.scrollHeight
+        this.style.visibility = "hidden";
+        closeBut.style.visibility = "visible";
+        conteinerDogs.style.height = heightConteiner + "px";
+    })
+
+    closeBut.addEventListener("click", function (e) {
+        this.style.visibility = "hidden";
+        openBut.style.visibility = "visible";
+        conteinerDogs.removeAttribute("style");
+    })
+})
 
 // Slide images dog
 imagesDog.forEach(img => {
