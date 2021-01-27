@@ -1,6 +1,7 @@
 :root {
     --width-dog: 24vw;
     --width-cont-dog: 24.4vw;
+    --height-cont-dog: 23vw;
 }
 
 * {
@@ -267,8 +268,9 @@ a {
 .list-dogs {
     display: grid;
     justify-items: center;
-    height: 23vw;
+    height: var(--height-cont-dog);
     grid-template-columns: repeat(3, 26vw);
+    grid-auto-rows: var(--height-cont-dog);
     grid-row-gap: 2vw;
     overflow: hidden;
     transition: 1s;
@@ -336,9 +338,9 @@ img.img-dog {
     max-width: var(--width-dog);
 }
 
-.info-dog span {
+span.name-dog {
     display: inline-block;
-    margin: 1vw;
+    margin: .4vw;
     padding: .4vw;
     background-color: #FED1D1;
     border: solid .2vw;
@@ -346,32 +348,37 @@ img.img-dog {
     font-size: 1vw;
 }
 
-.info-dog span img {
+span.name-dog img {
     width: 1vw;
     height: 1vw;
 }
 
 
-.dog .desc-dog {
+.desc-dog {
     display: none;
     text-align: left;
     font-size: 1.1vw;
     padding: 0 2vw 1vw 2vw;
 }
 
+.char-p {
+    display: grid;
+    grid-template-columns: 9% repeat(2, 40%);
+    grid-column-gap: 1vw;
+    padding: 0 .6vw;
+    align-items: end;
+    border-bottom: solid #6A4162 .1vw;
+    border-radius: .6vw;
+    font-size: .8vw;
+}
 
 .field-icon {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 100%;
 }
 
-
-.desc-dog a {
+.char-val a {
     color: #56348a;
-}
-
-.desc-dog p {
-    margin: 1vw 0;
+    text-decoration-line: underline;
 }
 
 .dog .bottom-dog {
@@ -379,7 +386,8 @@ img.img-dog {
 }
 
 .dog:hover .desc-dog {
-    display: inline-block;
+    display: grid;
+    grid-row-gap: 0.2vw;
     z-index: 1;
 }
 
