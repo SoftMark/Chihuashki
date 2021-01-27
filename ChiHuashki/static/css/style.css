@@ -28,7 +28,7 @@ a {
 
 #page {
     background-color: #FEFAFA;
-    font-family: "Balsamiq Sans", sans-serif;
+    font-family: "Fulbo", sans-serif;
     font-weight: bold;
     background-image: url("/content/images/lapki.png");
     background-blend-mode: overlay;
@@ -226,6 +226,7 @@ a {
 
 .about-us {
     display: block;
+    font-weight: normal;
 }
 
 .my-text {
@@ -270,19 +271,22 @@ a {
 /*    transform: rotate(180deg);*/
 /*}*/
 
-.but-all {
+.but-all-content {
     position: absolute;
     bottom: 0;
-    cursor: pointer;
-    visibility: hidden;
     margin-bottom: 0.5vw;
-    padding: 0 0.4vw;
     user-select: none;
+}
+
+.but-all {
+    display: none;
+    cursor: pointer;
+    padding: 0 0.4vw;
+    border-radius: 0.6vw;
 }
 
 .but-all:hover{
     border: solid .2vw;
-    border-radius: 0.6vw;
 }
 
 .but-all:active {
@@ -332,10 +336,13 @@ a {
     cursor: pointer;
     height: 2vw;
     top: 40%;
-    filter: alpha(Opacity=60);
-    opacity: 0.6;
+    opacity: 60%;
 }
 
+.arrow-dog:hover {
+    transform: scale(1.3);
+    opacity: 100%;
+}
 
 .images:hover .arrow-dog {
     visibility: visible;
@@ -353,11 +360,6 @@ a {
 .previous-img:hover {
     transform: scale(1.3) rotate(180deg);
 }
-
-.next-img:hover {
-    transform: scale(1.3);
-}
-
 
 .img-line {
     display: flex;
@@ -407,6 +409,10 @@ span.name-dog img {
     border-bottom-color: rgba(106, 65, 98, 0.5);
     border-radius: .6vw;
     font-size: .8vw;
+}
+
+.char-p:hover {
+    transform: scale(1.1);
 }
 
 .field-icon {

@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Fulbo';
+    src: url('Fulbo-Tano.eot');
+    src: local('Fulbo Tano'), local('Fulbo-Tano'),
+        url('Fulbo-Tano.eot?#iefix') format('embedded-opentype'),
+        url('Fulbo-Tano.woff2') format('woff2'),
+        url('Fulbo-Tano.woff') format('woff'),
+        url('Fulbo-Tano.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fulbo';
+    src: url('Fulbo-Premier.eot');
+    src: local('Fulbo Premier'), local('Fulbo-Premier'),
+        url('Fulbo-Premier.eot?#iefix') format('embedded-opentype'),
+        url('Fulbo-Premier.woff2') format('woff2'),
+        url('Fulbo-Premier.woff') format('woff'),
+        url('Fulbo-Premier.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fulbo';
+    src: url('Fulbo-Retro.eot');
+    src: local('Fulbo Retro'), local('Fulbo-Retro'),
+        url('Fulbo-Retro.eot?#iefix') format('embedded-opentype'),
+        url('Fulbo-Retro.woff2') format('woff2'),
+        url('Fulbo-Retro.woff') format('woff'),
+        url('Fulbo-Retro.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fulbo';
+    src: url('Fulbo-Argenta.eot');
+    src: local('Fulbo Argenta'), local('Fulbo-Argenta'),
+        url('Fulbo-Argenta.eot?#iefix') format('embedded-opentype'),
+        url('Fulbo-Argenta.woff2') format('woff2'),
+        url('Fulbo-Argenta.woff') format('woff'),
+        url('Fulbo-Argenta.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fulbo';
+    src: url('Fulbo-Champagne.eot');
+    src: local('Fulbo Champagne'), local('Fulbo-Champagne'),
+        url('Fulbo-Champagne.eot?#iefix') format('embedded-opentype'),
+        url('Fulbo-Champagne.woff2') format('woff2'),
+        url('Fulbo-Champagne.woff') format('woff'),
+        url('Fulbo-Champagne.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
