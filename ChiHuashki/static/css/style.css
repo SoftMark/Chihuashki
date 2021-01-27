@@ -27,7 +27,8 @@ a {
 
 #page {
     background-color: #FEFAFA;
-    font-family: "Montserrat SemiBold", sans-serif;
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: bold;
     background-image: url("/content/images/lapki.png");
     background-blend-mode: overlay;
     background-size: 10vw;
