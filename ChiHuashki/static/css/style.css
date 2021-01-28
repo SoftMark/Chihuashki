@@ -28,7 +28,7 @@ a {
 
 #page {
     background-color: #FEFAFA;
-    font-family: "Fulbo", sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
     background-image: url("/content/images/lapki.png");
     background-blend-mode: overlay;
@@ -118,7 +118,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1vw;
-    font-family: "Montserrat SemiBold", sans-serif;
+    font-family: sans-serif;
     background: rgba(106, 65, 98, 0.4);
     color: #FED1D1;
     width: 100%;
