@@ -135,6 +135,9 @@ class SiteConfigurationsAdmin(admin.ModelAdmin):
         ('О нас', {
             'fields': ("a_us_t_image", "a_us_t_paragraph", "a_us_b_image", "a_us_b_paragraph")
         }),
+        ('Футер', {
+            'fields': (("first_phone", "second_phone"), ("face_name", "inst_name"))
+        }),
     )
 
     readonly_fields = ('get_a_us_t_image', 'get_a_us_b_image',)

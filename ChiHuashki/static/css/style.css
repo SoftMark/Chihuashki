@@ -494,8 +494,8 @@ span.name-dog img {
 
 #topChi {
     position: fixed;
-    right: 45px;
-    bottom: 45px;
+    right: 30px;
+    bottom: 120px;
 }
 
 @media (max-width: 560px) {
@@ -510,4 +510,84 @@ span.name-dog img {
         background-position: center;
     }
 }
+
+footer {
+    margin-top: 60px;
+    height: 200px;
+    background: rgba(254, 209, 209, 0.6);
+    padding: 30px;
+}
+
+
+.left-footer {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.left-footer .contacts-title {
+    font-size: 2vw;
+    width: 100%;
+    height: 25%;
+}
+
+.left-footer .soc a {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+.left-footer .soc .soc-name {
+    all: initial;
+    text-decoration-line: underline;
+    font: inherit;
+    color: #56348a;
+}
+
+.left-footer .soc .soc-name:hover {
+    color: blue;
+    text-decoration-line: none;
+}
+
+
+footer ul {
+    margin-top: 2vw;
+    list-style-type: none;
+
+}
+
+footer li {
+    margin-top: 2vw;
+}
+
+
+.footer-contacts{
+    height: 75% !important;
+    font-size: 1.5vw;
+}
+
+.footer-contacts ul{
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.right-footer {
+    position: relative;
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
+}
+
+
+.right-footer p{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2vw;
+}
+
+
 

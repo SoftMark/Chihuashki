@@ -193,3 +193,9 @@ class SiteConfigurations(models.Model):
 
     get_a_us_b_image.short_description = 'Нижнее изображение'
     get_a_us_b_image.allow_tags = True
+
+    # Footer
+    first_phone = models.CharField('Первый номер телефона', max_length=20, default="+38(0**)-***-**-**")
+    second_phone = models.CharField('Второй номер телефона', max_length=20, default="+38(0**)-***-**-**")
+    face_name = models.CharField('FaceBook(Имя)', max_length=25, default="Мой логин FaceBook")
+    inst_name = models.CharField('Instagram(Имя)', max_length=25, default="Мой логин Instagram")
