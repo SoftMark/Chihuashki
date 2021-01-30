@@ -1,64 +1,64 @@
 <footer>
     <div class="left-footer">
         <p class="contacts-title">Наши контакты:</p>
-        <div class="left-footer footer-contacts">
-        <ul>
-<!--            First phone number-->
-            <li>
-                <div class="footer-tel">
-                {% if config.phone %}
-                    <a href="tel:{{ config.first_phone }}">
-<!--                        <img src="{{ static('images/PhoneCall.svg') }}" alt="">-->
-                        {{ config.first_phone }}
-                    </a>
-                {% else %}
-                    <a href="tel:+38(093)-378-34-41">
-                        <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                        +38(093)-378-34-41
-                    </a>
-                {% endif %}
-                </div>
-            </li>
+        <div class="footer-contacts">
+            <div class="footer-contact">
+            <ul>
+{#                First phone number#}
+                <li>
+                    <div class="footer-tel">
+                    {% if config.phone %}
+                        <a href="tel:{{ config.first_phone }}">
+{#                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">#}
+                            {{ config.first_phone }}
+                        </a>
+                    {% else %}
+                        <a href="tel:+38(093)-378-34-41">
+                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">
+                            +38(093)-378-34-41
+                        </a>
+                    {% endif %}
+                    </div>
+                </li>
 
-<!--            Second phone number-->
-            <li>
-                <div class="footer-tel">
-                {% if config.phone %}
-                    <a href="tel:{{ config.second_phone }}">
-<!--                        <img src="{{ static('images/PhoneCall.svg') }}" alt="">-->
-                        {{ config.second_phone }}
-                    </a>
-                {% else %}
-                    <a href="tel:+38(093)-378-34-41">
-                        <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                        +38(093)-378-34-41
-                    </a>
-                {% endif %}
-                </div>
-            </li>
+{#                Second phone number#}
+                <li>
+                    <div class="footer-tel">
+                    {% if config.phone %}
+                        <a href="tel:{{ config.second_phone }}">
+{#                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">#}
+                            {{ config.second_phone }}
+                        </a>
+                    {% else %}
+                        <a href="tel:+38(093)-378-34-41">
+                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">
+                            +38(093)-378-34-41
+                        </a>
+                    {% endif %}
+                    </div>
+                </li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+            <ul>
+{#                FaceBook#}
+                <li>
+                    <div class="soc">
+                        <a class="icon face" href="{{ link_face }}" target="_blank" title="Фейсбук"></a>
+                        <a class="soc-name" href="{{ link_face }}">{{ config.face_name }}</a>
+                    </div>
+                </li>
+{#                Instagram#}
+                <li>
+                    <div class="soc">
+                        <a class="icon ins" href="{{ link_inst }}" target="_blank" title="Инстаграм"></a>
+                        <a class="soc-name" href="{{ link_inst }}">{{ config.inst_name }}</a>
+                    </div>
+                </li>
             </ul>
-        </div>
-        <!--            FaceBook-->
-        <div class="right-footer footer-contacts">
-        <ul>
-            <li>
-                <div class="soc">
-                    <a href="{% if config.facebook %}{{ config.facebook }}{% else %}https://afly.co/dwz4jrhc5i{% endif %}" target="_blank" class="face" title="Фейсбук"></a>
-                    <a class="soc-name" href="{{ config.facebook }}">{{ config.face_name }}</a>
-                </div>
-            </li>
-<!--            Instagram-->
-            <li>
-                <div class="soc">
-                    <a href="{% if config.inst %}{{ config.inst }}{% else %}https://afly.co/dx14pyh16i{% endif %}" target="_blank" class="ins" title="Инстаграм"></a>
-                    <a class="soc-name" href="{{ config.inst }}">{{ config.inst_name }}</a>
-                </div>
-            </li>
-        </ul>
+            </div>
         </div>
     </div>
-
-
 
     <div class="right-footer">
         <p>ChiHuashki.com.ua © 2021</p>

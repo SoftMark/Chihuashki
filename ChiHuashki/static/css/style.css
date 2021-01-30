@@ -1,3 +1,4 @@
+/*-------------------------------------------------Global Settings----------------------------------------------------*/
 :root {
     --width-dog: 24vw;
     --width-cont-dog: 24.4vw;
@@ -20,6 +21,10 @@ body {
     background-color: #D46A92;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: #6A4162;
@@ -34,7 +39,9 @@ a {
     background-blend-mode: overlay;
     background-size: 10vw;
 }
+/*----------------------------------------------End Global Settings---------------------------------------------------*/
 
+/*----------------------------------------------------Header----------------------------------------------------------*/
 #header {
     height: 100vh;
     background-image: url("/content/images/BackGround.jpg");
@@ -42,12 +49,6 @@ a {
     background-size: 100%;
     background-position: center;
 }
-
-#topChi {
-    display: none;
-}
-
-
 
 #menu-links {
     display: flex;
@@ -118,7 +119,6 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1vw;
-    font-family: sans-serif;
     background: rgba(106, 65, 98, 0.4);
     color: #FED1D1;
     width: 100%;
@@ -149,7 +149,7 @@ a {
     display: flex;
 }
 
-.soc a {
+.icon {
     width: 3.3vw;
     height: 3.3vw;
     margin: 0 1vw;
@@ -186,6 +186,16 @@ a {
     background-image: url("/content/images/facebook_active.svg");
 }
 
+/*fix position button up*/
+#topChi {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 120px;
+}
+/*--------------------------------------------------End Header--------------------------------------------------------*/
+
+/*----------------------------------------------------Content---------------------------------------------------------*/
 #container {
     margin: 0 10vw;
 }
@@ -209,7 +219,7 @@ a {
 
 .contents:hover {
     background: rgba(254, 209, 209, 0.2);
-    box-shadow: 0px 10px 13px -7px #6A4162, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 0 10px 13px -7px #6A4162, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .label {
@@ -223,7 +233,9 @@ a {
     text-align: center;
     padding: 2vw 0;
 }
+/*--------------------------------------------------End Content-------------------------------------------------------*/
 
+/*---------------------------------------------------About-us---------------------------------------------------------*/
 .about-us {
     display: block;
     font-weight: normal;
@@ -253,7 +265,9 @@ a {
     width: 30vw;
     height: 20vw;
 }
+/*-----------------------------------------------End About-us---------------------------------------------------------*/
 
+/*----------------------------------------------------Dog-------------------------------------------------------------*/
 .content {
     display: flex;
     position: relative;
@@ -432,7 +446,6 @@ span.name-dog img {
     font-weight: normal;
 }
 
-
 .dog .bottom-dog {
     display: none;
 }
@@ -442,7 +455,9 @@ span.name-dog img {
     grid-row-gap: 0.2vw;
     z-index: 1;
 }
+/*-------------------------------------------------End Dog------------------------------------------------------------*/
 
+/*-----------------------------------------------Photogallery---------------------------------------------------------*/
 .photogallery {
     position: relative;
     padding: 0 2vw 2vw;
@@ -502,14 +517,59 @@ span.name-dog img {
 
     transform: rotate(180deg) scale(1.05);
 }
+/*----------------------------------------------End Photogallery------------------------------------------------------*/
 
-
-#topChi {
-    position: fixed;
-    right: 30px;
-    bottom: 120px;
+/*---------------------------------------------------Footer-----------------------------------------------------------*/
+footer {
+    background: rgba(254, 209, 209, 0.6);
+    padding: 2vw;
 }
 
+.left-footer, .right-footer {
+    display: inline-block;
+    width: 59%;
+    font-size: 2vw;
+}
+
+.footer-contacts{
+    display: grid;
+    grid-template-columns: 35% auto;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+}
+
+.footer-contact {
+    display: inline-block;
+}
+
+.footer-contact ul {
+    display: grid;
+    grid-row-gap: 2vw;
+}
+
+.footer-contact .icon {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+.soc-name {
+    text-decoration-line: underline;
+    color: #56348a;
+}
+
+.soc-name:hover {
+    color: blue;
+    text-decoration-line: none;
+}
+
+.right-footer {
+    width: 40%;
+    text-align: right;
+    vertical-align: bottom;
+}
+/*---------------------------------------------End Footer-------------------------------------------------------------*/
+
+/*------------------------------------------Adaptive settings---------------------------------------------------------*/
 @media (max-width: 560px) {
     #header {
         background-image: url("/content/images/BackGround1.jpg");
@@ -522,84 +582,6 @@ span.name-dog img {
         background-position: center;
     }
 }
-
-footer {
-    margin-top: 60px;
-    height: 200px;
-    background: rgba(254, 209, 209, 0.6);
-    padding: 30px;
-}
-
-
-.left-footer {
-    position: relative;
-    width: 40%;
-    height: 100%;
-    float: left;
-}
-
-.left-footer .contacts-title {
-    font-size: 2vw;
-    width: 100%;
-    height: 25%;
-}
-
-.left-footer .soc a {
-    height: 1.5vw;
-    width: 1.5vw;
-}
-
-.left-footer .soc .soc-name {
-    all: initial;
-    text-decoration-line: underline;
-    font: inherit;
-    color: #56348a;
-}
-
-.left-footer .soc .soc-name:hover {
-    color: blue;
-    text-decoration-line: none;
-}
-
-
-footer ul {
-    margin-top: 2vw;
-    list-style-type: none;
-
-}
-
-footer li {
-    margin-top: 2vw;
-}
-
-
-.footer-contacts{
-    height: 75% !important;
-    font-size: 1.5vw;
-}
-
-.footer-contacts ul{
-    margin-top: 0;
-    position: absolute;
-    bottom: 0;
-}
-
-
-
-.right-footer {
-    position: relative;
-    margin-left: 50%;
-    width: 50%;
-    height: 100%;
-}
-
-
-.right-footer p{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 2vw;
-}
-
+/*---------------------------------------End Adaptive settings--------------------------------------------------------*/
 
 
