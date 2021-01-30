@@ -13,17 +13,17 @@
                             {% if dog.images.all() %}
                                 <div class="img-line">
                                     {% for img in dog.images.all() %}
-                                    <img src="{{ img.small_image.url }}" alt="{{ dog.name }}" class="img-dog">
+                                    <img class="img-dog" src="{{ img.small_image.url }}" alt="{{ dog.name }}">
                 {#                    <img src="{{ dog.images.all()[0].small_image }}" alt="{{ dog.name }}" class="img-dog">#}
                                     {% endfor %}
                                 </div>
-                                {% if len(dog.images.all()) > 1 %}
+                                {% if dog.images.all()|length > 1 %}
                                     <img class="arrow-dog previous-img" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">
                                     <img class="arrow-dog next-img" src="{{ static('images/arrow_right.svg') }}" alt="Следующая">
                                 {% endif %}
                             {% else %}
                                 <div class="img-line">
-                                    <img src="{{ static('images/no_photo.jpg') }}" alt="{{ dog.name }}" class="img-dog">
+                                    <img class="img-dog" src="{{ static('images/no_photo.jpg') }}" alt="{{ dog.name }}">
                                 </div>
                             {% endif %}
                         </div>

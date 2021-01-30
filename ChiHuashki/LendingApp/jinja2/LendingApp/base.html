@@ -3,6 +3,8 @@
 {% endblock %}
 
 <body>
+    {% set link_face = config.facebook if config.facebook else "https://afly.co/dwz4jrhc5i" %}
+    {% set link_inst = config.inst if config.inst else "https://afly.co/dx14pyh16i" %}
     <div id="page">
         {% block header %}
         {% include "LendingApp/includes/header.html" %}
