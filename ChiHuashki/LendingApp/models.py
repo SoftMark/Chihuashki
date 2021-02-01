@@ -195,6 +195,7 @@ class SiteConfigurations(models.Model):
     get_a_us_b_image.allow_tags = True
 
     # Footer
+    footer_title = models.CharField('Заголовок', max_length=30, default="Заголовок футера")
     first_phone = models.CharField('Первый номер телефона', max_length=20, default="+38(0**)-***-**-**")
     second_phone = models.CharField('Второй номер телефона', max_length=20, default="+38(0**)-***-**-**")
     face_name = models.CharField('FaceBook(Имя)', max_length=25, default="Мой логин FaceBook")

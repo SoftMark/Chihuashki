@@ -136,7 +136,7 @@ class SiteConfigurationsAdmin(admin.ModelAdmin):
             'fields': ("a_us_t_image", "a_us_t_paragraph", "a_us_b_image", "a_us_b_paragraph")
         }),
         ('Футер', {
-            'fields': (("first_phone", "second_phone"), ("face_name", "inst_name"))
+            'fields': ("footer_title", ("first_phone", "second_phone"), ("face_name", "inst_name"))
         }),
     )
 
