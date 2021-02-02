@@ -55,30 +55,29 @@ categoryContent.forEach(categoryDog => {
 // Slide images dog
 imagesDog.forEach(img => {
     let count = 0;
-    img.querySelectorAll(".arrow-dog").forEach( arrow => {
+    img.addEventListener("click", function (e) {
+        e.preventDefault();
 
-        arrow.addEventListener("click", function (e) {
-            e.preventDefault();
-
+        if (e.target.classList[0] == "arrow-dog") {
             let images = img.querySelector(".img-line"),
                 image = images.querySelectorAll("img"),
                 imgCol = image.length,
                 imgWidth = 100;
 
 
-            if (this.classList[1] == "previous-img") {
+            if (e.target.classList[1] == "previous-img") {
                 count--;
-                if (count < 0){
+                if (count < 0) {
                     count = imgCol - 1;
                 }
             } else {
                 count++;
-                if (count > imgCol - 1){
+                if (count > imgCol - 1) {
                     count = 0;
                 }
             }
-            images.style.transform = "translate(-"+count*imgWidth+"%)";
-        });
+            images.style.transform = "translate(-" + count * imgWidth + "%)";
+        }
     });
 });
 
@@ -96,16 +95,15 @@ function autoSlide(){
 }
 
 // Slide gallery dog
-document.querySelectorAll(".gallery-arrow").forEach( arrow => {
-    arrow.addEventListener("click", function (e) {
-        e.preventDefault();
-
+document.querySelector(".photogallery").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (e.target.classList[0] == "gallery-arrow"){
         let images = document.querySelector(".gallery-list"),
         imgCol = images.querySelectorAll(".block-img").length,
         imgWidth = 33.3;
 
 
-        if (this.classList[1] == "gallery-previous") {
+        if (e.target.classList[1] == "gallery-previous") {
             countGallery--;
             if (countGallery < 0){
                 countGallery = imgCol - 3;
@@ -117,11 +115,10 @@ document.querySelectorAll(".gallery-arrow").forEach( arrow => {
             }
         }
         images.style.transform = "translate(-"+countGallery*imgWidth+"%)";
-    });
+    }
 });
 
 window.addEventListener("scroll", function() {
-    console.log("scroll")
     const value = window.scrollY;
 
     if (value >= 300) {

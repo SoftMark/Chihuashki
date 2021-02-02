@@ -2,32 +2,22 @@
     <nav id="menu-links">
         <a class="nav-logo navigate" href="#header">ChiHuashki.com.ua</a>
         <ul class="nav-main">
-            <li style="--i:-7vw;"><a class="navigate" href="#about-us">О нас</a></li>
+            <li style="--i:-6vw;"><a class="navigate" href="#about-us">О нас</a></li>
+            <li style="--i:-4vw;"><a class="navigate" href="#contact">Контакты</a></li>
             <li style="--i:2vw;"><a class="navigate" href="#dogs-puppies">Пёсики на продажу</a></li>
             <li style="--i:-1vw;"><a class="navigate" href="#dogs-girls">Наши девочки</a></li>
             <li style="--i:0vw;"><a class="navigate" href="#dogs-boys">Наши мальчики</a></li>
-            <li style="--i:-3vw;"><a class="navigate" href="#dogs-babies">Наши детки</a></li>
+            <li style="--i:-2vw;"><a class="navigate" href="#dogs-babies">Наши детки</a></li>
         </ul>
     </nav>
     {% if config %}
     <div id="head-inform">
-        <h1 class="tex">{% if config.title %}{{ config.title }}{% else %}Выбери себе нового друга!{% endif %}</h1>
-        <div class="tel">
-            {% if config.phone %}
-            <a href="tel:{{ config.phone }}">
-                <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                {{ config.phone }}
-            </a>
-            {% else %}
-            <a href="tel:+38(093)-378-34-41">
-                <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                +38(093)-378-34-41
-            </a>
-            {% endif %}
-        </div>
-        <div class="soc">
-            <a class="icon ins" href="{{ link_inst }}" target="_blank" title="Инстаграм"></a>
-            <a class="icon face" href="{{ link_inst }}" target="_blank" title="Фейсбук"></a>
+        <div class="block-pit">
+            <h1 class="tex">{% if config.title %}{{ config.title }}{% else %}Выбери себе нового друга!{% endif %}</h1>
+            <div class="soc">
+                <a class="icon ins" href="{{ link_inst }}" target="_blank" title="Инстаграм"></a>
+                <a class="icon face" href="{{ link_inst }}" target="_blank" title="Фейсбук"></a>
+            </div>
         </div>
     </div>
     {% endif %}
