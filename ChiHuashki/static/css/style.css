@@ -99,9 +99,12 @@ a {
     border-radius: 2vw;
 }
 
+.navigate:hover {
+    transform: scale(1.1);
+}
+
 .nav-main .navigate:hover {
     border: solid .2vw;
-    transform: scale(1.1);
 }
 
 .nav-main .navigate:active {
