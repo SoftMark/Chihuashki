@@ -30,20 +30,20 @@
 
                         <div class="info-dog">
 
-                            <span class="name-dog {{ dog.gender }}">
+                            <span class="name-dog">
                                 {{ dog.name }}
-                                <img src="{{ static('/images/icons/'+dog.gender+'.png') }}" alt="{{ dog.gender }}">
+                                <i class="icon {{ dog.gender }}"></i>
                             </span>
                             <div class="desc-dog">
                                 {% for charact in character %}
                                     <p class="char-p">
-                                        <img class='desc-char field-icon' src="{{ static('/images/icons/'+character[charact]+'.png') }}" alt="{{ charact }}">
+                                        <i class='desc-char icon {{ character[charact] }}'></i>
                                         <span class="desc-char char-name">{{ charact }}:</span>
                                         <span class="desc-char char-val">{{ dog[character[charact]] }}</span>
                                     </p>
                                 {% endfor %}
                                 <p class="char-p">
-                                    <img class='field-icon' src="{{ static('/images/icons/pedigree.png') }}" alt="Родословная"/>
+                                    <i class='icon pedigree'></i>
                                     <span class="desc-char char-name">Родословная:</span>
                                     <span class="desc-char char-val"><a href="{{ dog.pedigree_link }}">{{ dog.pedigree }}</a></span>
                                 </p>
