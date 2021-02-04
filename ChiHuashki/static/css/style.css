@@ -148,30 +148,36 @@ a {
 }
 
 .ins {
-    background-image: url("/content/images/instagram.svg");
+    color: #fff;
+    background : linear-gradient(47deg, rgba(246, 100, 14, 1) 15%, rgba(186, 3, 167, 1) 45%, rgba(106, 1, 185, 1) 74%);
 }
 
 .face {
-    background-image: url("/content/images/facebook.svg");
+    color: #fff;
+    background: linear-gradient(0deg, rgba(0, 178, 255, 1) 0%, rgba(0, 175, 255, 1) 50%, rgba(0, 106, 255, 1) 100%);
 }
 
 .ins:hover {
-    background-image: url("/content/images/instagram_hover.svg");
+    color: #FED1D1;
+    background : linear-gradient(0deg, rgba(246, 100, 14, 1) 5%, rgba(186, 3, 167, 1) 55%, rgba(106, 1, 185, 1) 95%);
     transform: scale(1.05);
 
 }
 
 .face:hover {
-    background-image: url("/content/images/facebook_hover.svg");
+    color: #FED1D1;
+    background: linear-gradient(180deg, rgba(0, 178, 255, 1) 0%, rgba(0, 106, 255, 1) 100%);
     transform: scale(1.05);
 }
 
 .ins:active {
-    background-image: url("/content/images/instagram_active.svg");
+    color: #CB61B6;
+    background: #F7D4F4;
 }
 
 .face:active {
-    background-image: url("/content/images/facebook_active.svg");
+    color: #CB61B6;
+    background: #D3EFFE;
 }
 
 /*fix position button up*/
