@@ -3,6 +3,7 @@
     --width-dog: 24vw;
     --width-cont-dog: 24.4vw;
     --height-cont-dog: 23vw;
+    --height-img-dog: 18vw;
 }
 
 * {
@@ -137,45 +138,48 @@ a {
     display: flex;
 }
 
-.icon {
-    width: 3.3vw;
-    height: 3.3vw;
+.soc .icon {
     margin: 0 1vw;
+    overflow: hidden;
     border-radius: 100%;
     border: solid .2vw;
-    background-position: center;
-    background-size: 110%;
 }
 
-.ins {
+.block-pit .icon {
+    width: 3.3vw;
+    height: 3.3vw;
+    font-size: 3vw;
+}
+
+.instagram {
     color: #fff;
     background : linear-gradient(47deg, rgba(246, 100, 14, 1) 15%, rgba(186, 3, 167, 1) 45%, rgba(106, 1, 185, 1) 74%);
 }
 
-.face {
+.facebook {
     color: #fff;
     background: linear-gradient(0deg, rgba(0, 178, 255, 1) 0%, rgba(0, 175, 255, 1) 50%, rgba(0, 106, 255, 1) 100%);
 }
 
-.ins:hover {
+.instagram:hover {
     color: #FED1D1;
     background : linear-gradient(0deg, rgba(246, 100, 14, 1) 5%, rgba(186, 3, 167, 1) 55%, rgba(106, 1, 185, 1) 95%);
     transform: scale(1.05);
 
 }
 
-.face:hover {
+.facebook:hover {
     color: #FED1D1;
     background: linear-gradient(180deg, rgba(0, 178, 255, 1) 0%, rgba(0, 106, 255, 1) 100%);
     transform: scale(1.05);
 }
 
-.ins:active {
+.instagram:active {
     color: #CB61B6;
     background: #F7D4F4;
 }
 
-.face:active {
+.facebook:active {
     color: #CB61B6;
     background: #D3EFFE;
 }
@@ -184,7 +188,7 @@ a {
 #topChi {
     display: none;
     position: fixed;
-    right: 30px;
+    right: 3vw;
     bottom: 120px;
 }
 /*--------------------------------------------------End Header--------------------------------------------------------*/
@@ -370,11 +374,16 @@ a {
 }
 
 .img-line {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    grid-auto-rows: var(--height-img-dog);
+    justify-items: center;
     transition: all ease 1s;
 }
 
-img.img-dog {
+.img-dog, .video-dog {
+    display: inline-block;
     width: 100%;
     height: 100%;
 }
@@ -394,9 +403,8 @@ span.name-dog {
     font-size: 1vw;
 }
 
-span.name-dog img {
-    width: 1.1vw;
-    height: 1.1vw;
+span.name-dog .icon {
+    font-size: 1.1vw;
 }
 
 
@@ -423,8 +431,8 @@ span.name-dog img {
     transform: scale(1.1);
 }
 
-.field-icon {
-    width: 100%;
+.char-p .icon {
+    font-size: 2vw;
 }
 
 .char-val a {
@@ -543,12 +551,18 @@ footer {
 
 .footer-contact ul {
     display: grid;
-    grid-row-gap: 2vw;
+    grid-auto-rows: 4vw;
+    align-items: center;
 }
 
-.footer-contact .icon {
-    height: 1.5vw;
-    width: 1.5vw;
+.icon.PhoneCall {
+    font-weight: bold;
+}
+
+.footer-contact .soc .icon {
+    font-size: 2vw;
+    height: 2.3vw;
+    width: 2.3vw;
 }
 
 .soc-name {

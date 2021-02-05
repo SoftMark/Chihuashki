@@ -61,18 +61,19 @@ imagesDog.forEach(img => {
         if (e.target.classList[0] == "arrow-dog") {
             let images = img.querySelector(".img-line"),
                 image = images.querySelectorAll("img"),
+                video = images.querySelectorAll("video"),
+                videoCol = video.length,
                 imgCol = image.length,
                 imgWidth = 100;
-
 
             if (e.target.classList[1] == "previous-img") {
                 count--;
                 if (count < 0) {
-                    count = imgCol - 1;
+                    count = imgCol + videoCol - 1;
                 }
             } else {
                 count++;
-                if (count > imgCol - 1) {
+                if (count > imgCol + videoCol - 1) {
                     count = 0;
                 }
             }
