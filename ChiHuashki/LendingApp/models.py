@@ -1,31 +1,12 @@
+import subprocess
 from django.db import models
 from django.utils.safestring import mark_safe
-from django.db.models.signals import pre_save, post_init
+from django.db.models.signals import pre_save, post_init, post_save
+from django.core.files.base import File
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
-
-
-# class DynamicUploadImageField(models.ImageField):
-#     def __init__(self, *args, **kwargs):
-#         # Increase max length to support longer filenames
-#         if "max_length" not in kwargs:
-#             kwargs["max_length"] = 255
-#         if "upload_to" not in kwargs:
-#             kwargs["upload_to"] = "images"
-#         self.prime_upload = kwargs.get("prime_upload", False)
-#         if "prime_upload" in kwargs:
-#             del (kwargs["prime_upload"])
-#         super().__init__(*args, **kwargs)
-#
-#     def contribute_to_class(self, cls, name):
-#         super().contribute_to_class(cls, name)
-#         if self.prime_upload:
-#             post_init.connect(self._get_upload_to, sender=cls)
-#         pre_save.connect(self._get_upload_to, sender=cls)
-#
-#     def _get_upload_to(self, instance=None, *args, **kwargs):
-#         if hasattr(instance, "get_upload_to"):
-#             self.upload_to = instance.get_upload_to(self.attname)
+import moviepy.editor as moviepy
+import os
 
 
 class GalleryImage(models.Model):
@@ -83,7 +64,7 @@ class Chihuahua(models.Model):
     mother = models.CharField('Мама', max_length=50)
     pedigree = models.CharField('Родословная', max_length=50)
     pedigree_link = models.URLField('Ссылка на родословную')
-    video = models.FileField(upload_to='videos', null=True, verbose_name='Видео', blank=True)
+    video = models.FileField(upload_to="videos", null=True, verbose_name='Видео', blank=True)
 
     def __str__(self):
         return self.name
@@ -106,11 +87,6 @@ class Photo(models.Model):
                                  format='JPEG',
                                  options={'quality': 60})
 
-    # def get_upload_to(self, field_name):
-    #     class_name = self.chihuahua.__class__.__name__.lower()
-    #     instance_name = self.chihuahua.name
-    #     return "{}/{}".format(class_name, instance_name)
-
     @classmethod
     def image_no_photo(cls):
         no_photo_url = "/content/images/no_photo.jpg"
@@ -118,7 +94,8 @@ class Photo(models.Model):
 
     def image_img(self):
         if self.image:
-            return mark_safe(f'<a class="all-photo" href="{self.image.url}" target="_blank"><img src="{self.small_image.url}" width="100"/></a>')
+            return mark_safe(
+                f'<a class="all-photo" href="{self.image.url}" target="_blank"><img src="{self.small_image.url}" width="100"/></a>')
         else:
             return self.image_no_photo()
 

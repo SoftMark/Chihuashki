@@ -10,14 +10,19 @@
                 <li class="list-dog">
                     <div class="dog">
                         <div class="images">
-                            {% if dog.images.all() %}
+                            {% if dog.images.all() or dog.video %}
                                 <div class="img-line">
                                     {% for img in dog.images.all() %}
                                     <img class="img-dog" src="{{ img.small_image.url }}" alt="{{ dog.name }}">
                 {#                    <img src="{{ dog.images.all()[0].small_image }}" alt="{{ dog.name }}" class="img-dog">#}
                                     {% endfor %}
+                                    {% if dog.video %}
+                                        <video class="video-dog" preload controls>
+                                            <source src="{{ dog.video }}" type='video/mp4'>
+                                        </video>
+                                    {% endif %}
                                 </div>
-                                {% if dog.images.all()|length > 1 %}
+                                {% if dog.images.all()|length > 1 or dog.video and dog.images.all() %}
                                     <img class="arrow-dog previous-img" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">
                                     <img class="arrow-dog next-img" src="{{ static('images/arrow_right.svg') }}" alt="Следующая">
                                 {% endif %}
