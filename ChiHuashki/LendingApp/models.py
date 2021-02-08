@@ -129,7 +129,6 @@ class SiteConfigurations(models.Model):
 
     # Header
     title = models.CharField('Заголовок', max_length=25, default="Выбери себе нового друга!")
-    phone = models.CharField('Номер телефона', max_length=20)
     inst = models.URLField('Instagram ссылка')
     facebook = models.URLField('FaceBook ссылка')
     header_background = models.ImageField(verbose_name='Фон шапки', upload_to='gallery')
@@ -173,7 +172,7 @@ class SiteConfigurations(models.Model):
 
     # Footer
     footer_title = models.CharField('Заголовок', max_length=30, default="Заголовок футера")
-    first_phone = models.CharField('Первый номер телефона', max_length=20, default="+38(0**)-***-**-**")
-    second_phone = models.CharField('Второй номер телефона', max_length=20, default="+38(0**)-***-**-**")
+    first_phone = models.CharField('Первый номер телефона', max_length=20, default="+38(0**)-***-**-**", blank=True)
+    second_phone = models.CharField('Второй номер телефона', max_length=20, default="+38(0**)-***-**-**", blank=True)
     face_name = models.CharField('FaceBook(Имя)', max_length=25, default="Мой логин FaceBook")
     inst_name = models.CharField('Instagram(Имя)', max_length=25, default="Мой логин Instagram")
