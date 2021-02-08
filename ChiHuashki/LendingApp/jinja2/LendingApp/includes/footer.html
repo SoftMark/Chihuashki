@@ -6,38 +6,26 @@
             <div class="footer-contact">
                 <ul>
     {#                First phone number#}
+                    {% if config.first_phone %}
                     <li class="footer-tel">
-                        {% if config.phone %}
                             <a href="tel:{{ config.first_phone }}">
                                 <i class="icon PhoneCall"></i>
-    {#                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">#}
                                 {{ config.first_phone }}
                             </a>
-                        {% else %}
-                            <a href="tel:+38(093)-378-34-41">
-                                <i class="icon PhoneCall"></i>
-                                <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                                +38(093)-378-34-41
-                            </a>
-                        {% endif %}
                     </li>
+                    {% else %}
+                    {% endif %}
 
     {#                Second phone number#}
+                    {% if config.second_phone %}
                     <li class="footer-tel">
-                        {% if config.second_phone %}
                             <a href="tel:{{ config.second_phone }}">
                                 <i class="icon PhoneCall"></i>
-    {#                            <img src="{{ static('images/PhoneCall.svg') }}" alt="">#}
                                 {{ config.second_phone }}
                             </a>
-                        {% else %}
-                            <a href="tel:+38(093)-378-34-41">
-                                <i class="icon PhoneCall"></i>
-                                <img src="{{ static('images/PhoneCall.svg') }}" alt="">
-                                +38(093)-378-34-41
-                            </a>
-                        {% endif %}
                     </li>
+                    {% else %}
+                    {% endif %}
                 </ul>
             </div>
             <div class="footer-contact">
