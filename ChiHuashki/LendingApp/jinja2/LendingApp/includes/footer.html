@@ -11,6 +11,9 @@
                             <a href="tel:{{ config.first_phone }}">
                                 <i class="icon PhoneCall"></i>
                                 {{ config.first_phone }}
+                                {% if config.first_viber_flag == 'Да' %}
+                                (Viber icon)
+                                {% endif %}
                             </a>
                     </li>
                     {% else %}
@@ -22,6 +25,9 @@
                             <a href="tel:{{ config.second_phone }}">
                                 <i class="icon PhoneCall"></i>
                                 {{ config.second_phone }}
+                                {% if config.second_viber_flag == 'Да' %}
+                                (Viber icon)
+                                {% endif %}
                             </a>
                     </li>
                     {% else %}
@@ -30,15 +36,25 @@
             </div>
             <div class="footer-contact">
             <ul>
+
 {#                FaceBook#}
+
                 <li class="soc">
                     <a class="icon facebook" href="{{ link_face }}" target="_blank" title="Фейсбук"></a>
-                    <a class="soc-name" href="{{ link_face }}">{{ config.face_name }}</a>
+                    {% if config.face_name %}
+                        <a class="soc-name" href="{{ link_face }}">{{ config.face_name }}</a>
+                    {% else %}
+                    {% endif %}
                 </li>
+
+
 {#                Instagram#}
                 <li class="soc">
                     <a class="icon instagram" href="{{ link_inst }}" target="_blank" title="Инстаграм"></a>
-                    <a class="soc-name" href="{{ link_inst }}">{{ config.inst_name }}</a>
+                    {% if config.inst_name %}
+                        <a class="soc-name" href="{{ link_inst }}">{{ config.inst_name }}</a>
+                    {% else %}
+                    {% endif %}
                 </li>
             </ul>
             </div>

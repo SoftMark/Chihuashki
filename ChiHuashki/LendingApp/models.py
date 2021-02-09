@@ -173,6 +173,10 @@ class SiteConfigurations(models.Model):
     # Footer
     footer_title = models.CharField('Заголовок', max_length=30, default="Заголовок футера")
     first_phone = models.CharField('Первый номер телефона', max_length=20, default="+38(0**)-***-**-**", blank=True)
+    first_viber_flag = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='Вайбер',
+                               max_length=5, default='Нет', blank=True)
     second_phone = models.CharField('Второй номер телефона', max_length=20, default="+38(0**)-***-**-**", blank=True)
-    face_name = models.CharField('FaceBook(Имя)', max_length=25, default="Мой логин FaceBook")
-    inst_name = models.CharField('Instagram(Имя)', max_length=25, default="Мой логин Instagram")
+    second_viber_flag = models.CharField(choices=(('Да', "Да"), ('Нет', "Нет")), verbose_name='Вайбер',
+                               max_length=5, default='Нет', blank=True)
+    face_name = models.CharField('FaceBook(Имя)', max_length=25, default="Мой логин FaceBook", blank=True)
+    inst_name = models.CharField('Instagram(Имя)', max_length=25, default="Мой логин Instagram", blank=True)
