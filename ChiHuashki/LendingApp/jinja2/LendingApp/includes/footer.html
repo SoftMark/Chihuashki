@@ -8,12 +8,12 @@
     {#                First phone number#}
                     {% if config.first_phone %}
                     <li class="footer-tel">
+                            {% if config.first_viber_flag == 'Да' %}
+                                <img src="{{ static('images/icons/viber.svg') }}" class="viber-icon" alt="(Viber)">
+                            {% endif %}
                             <a href="tel:{{ config.first_phone }}">
                                 <i class="icon PhoneCall"></i>
                                 {{ config.first_phone }}
-                                {% if config.first_viber_flag == 'Да' %}
-                                (Viber icon)
-                                {% endif %}
                             </a>
                     </li>
                     {% else %}
@@ -22,12 +22,12 @@
     {#                Second phone number#}
                     {% if config.second_phone %}
                     <li class="footer-tel">
+                            {% if config.second_viber_flag == 'Да' %}
+                                <img src="{{ static('images/icons/viber.svg') }}" class="viber-icon" alt="(Viber)">
+                            {% endif %}
                             <a href="tel:{{ config.second_phone }}">
                                 <i class="icon PhoneCall"></i>
                                 {{ config.second_phone }}
-                                {% if config.second_viber_flag == 'Да' %}
-                                (Viber icon)
-                                {% endif %}
                             </a>
                     </li>
                     {% else %}

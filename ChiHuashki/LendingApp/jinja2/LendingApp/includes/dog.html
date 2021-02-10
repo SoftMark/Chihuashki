@@ -17,7 +17,7 @@
                 {#                    <img src="{{ dog.images.all()[0].small_image }}" alt="{{ dog.name }}" class="img-dog">#}
                                     {% endfor %}
                                     {% if dog.video %}
-                                        <video class="video-dog" preload="none" controls>
+                                        <video class="video-dog" preload="none" loop="loop" controls>
                                             <source src="{{ dog.video }}" type='video/mp4'>
                                         </video>
                                     {% endif %}

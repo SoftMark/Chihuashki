@@ -575,6 +575,11 @@ footer {
     text-decoration-line: none;
 }
 
+.viber-icon {
+    height: 1.8vw;
+    width: 1.8vw;
+}
+
 .right-footer {
     width: 40%;
     text-align: right;
