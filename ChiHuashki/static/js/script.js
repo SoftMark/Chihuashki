@@ -103,6 +103,7 @@ document.querySelector(".photogallery").addEventListener("click", function (e) {
         imgCol = images.querySelectorAll(".block-img").length,
         imgWidth = 33.3;
 
+        clearInterval(intervalSlide);
 
         if (e.target.classList[1] == "gallery-previous") {
             countGallery--;

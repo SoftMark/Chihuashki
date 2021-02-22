@@ -70,7 +70,7 @@ a {
 
 .nav-logo {
     background-color: #FED1D1;
-    width: 35vw;
+    width: 28vw;
     border-radius: 0 0 1vw 1vw;
     /*border-right-style: solid;*/
     /*border-bottom-style: solid;*/
@@ -79,16 +79,21 @@ a {
     font-size: 2.5vw;
 }
 
+.nav-logo img {
+    width: 90%;
+    height: 90%;
+}
+
 .nav-main {
     display: flex;
     font-size: 1.2vw;
-    width: 64vw;
+    width: 71vw;
     justify-content: space-around;
 }
 
 .nav-main li {
     display: block;
-    width: calc(72vw / 6 + var(--i));
+    width: calc(79vw / 6 + var(--i));
     align-self: center;
 }
 
@@ -308,9 +313,9 @@ a {
 .list-dogs {
     display: grid;
     justify-items: center;
-    height: var(--height-cont-dog);
+    height: var(--height-cont-dog, 23vw);
     grid-template-columns: repeat(3, 26vw);
-    grid-auto-rows: var(--height-cont-dog);
+    grid-auto-rows: var(--height-cont-dog, 23vw);
     grid-row-gap: 2vw;
     overflow: hidden;
     transition: 1s;
@@ -319,7 +324,7 @@ a {
 .list-dog {
     display: inline-block;
     vertical-align: top;
-    width: var(--width-cont-dog);
+    width: var(--width-cont-dog, 24.4vw);
 }
 
 .dog {
@@ -330,7 +335,7 @@ a {
 }
 
 .dog:hover {
-    width: var(--width-cont-dog);
+    width: var(--width-cont-dog, 24.4vw);
     background-color: #fed1d1;
     position: absolute;
     transform: scale(1.05);
@@ -377,7 +382,7 @@ a {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
-    grid-auto-rows: var(--height-img-dog);
+    grid-auto-rows: var(--height-img-dog, 18vw);
     justify-items: center;
     transition: all ease 1s;
 }
@@ -390,7 +395,7 @@ a {
 
 .info-dog {
     text-align: center;
-    max-width: var(--width-dog);
+    max-width: var(--width-dog, 24vw);
 }
 
 span.name-dog {
@@ -534,15 +539,14 @@ footer {
 }
 
 .footer-title {
-    font-size: 2.5vw;
-    margin-bottom: 1vw;
+    font-size: 2.3vw;
+    margin-bottom: 2vw;
 }
 
 .footer-contacts{
     display: grid;
     grid-template-columns: 35% auto;
     font-size: 1.5vw;
-    margin-top: 2vw;
 }
 
 .footer-contact {
@@ -567,11 +571,10 @@ footer {
 
 .soc-name {
     text-decoration-line: underline;
-    color: #56348a;
 }
 
 .soc-name:hover {
-    color: blue;
+    text-shadow: 0 0 9px #6a416285;
     text-decoration-line: none;
 }
 
@@ -584,6 +587,8 @@ footer {
     width: 40%;
     text-align: right;
     vertical-align: bottom;
+    font-size: 1vw;
+    opacity: 50%;
 }
 /*---------------------------------------------End Footer-------------------------------------------------------------*/
 
