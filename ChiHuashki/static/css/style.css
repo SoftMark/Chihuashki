@@ -80,8 +80,8 @@ a {
 }
 
 .nav-logo img {
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 90%;
 }
 
 .nav-main {
@@ -93,7 +93,7 @@ a {
 
 .nav-main li {
     display: block;
-    width: calc(72vw / 6 + var(--i));
+    width: calc(79vw / 6 + var(--i));
     align-self: center;
 }
 
@@ -571,11 +571,10 @@ footer {
 
 .soc-name {
     text-decoration-line: underline;
-    color: #56348a;
 }
 
 .soc-name:hover {
-    color: blue;
+    text-shadow: 0 0 9px #6a416285;
     text-decoration-line: none;
 }
 
