@@ -6,3 +6,4 @@ django-cleanup==5.1.0
 django-imagekit==4.0.2
 django-jinja==2.7.0
 Jinja2==2.11.2
+django-ckeditor==6.0.0
