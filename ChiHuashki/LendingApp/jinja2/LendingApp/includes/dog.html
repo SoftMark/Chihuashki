@@ -1,4 +1,6 @@
 {% if chihuahuas %}
+
+
 {#    <img class="dog-slide dog-previous" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">#}
     <div class="but-all-content">
         <span class="but-all open-dogs">Больше</span>
@@ -9,12 +11,12 @@
             {% if (dog.gender == gender or gender == "all") and (dog.age == age or age == "all") and (dog.sale == sale or sale == "all") %}
                 <li class="list-dog">
                     <div class="dog">
+<!--                        {% set gallery_id = gallery_id + 1 %}-->
                         <div class="images">
                             {% if dog.images.all() or dog.video %}
-                                <div class="img-line">
+                                <div class="img-line popup-gallery">
                                     {% for img in dog.images.all() %}
-                                    <img class="img-dog" src="{{ img.small_image.url }}" alt="{{ dog.name }}">
-                {#                    <img src="{{ dog.images.all()[0].small_image }}" alt="{{ dog.name }}" class="img-dog">#}
+                                    <a href="{{ img.image.url }}"> <img class="img-dog" src="{{ img.small_image.url }}" alt="{{ dog.name }}"></a>
                                     {% endfor %}
                                     {% if dog.video %}
                                         <video class="video-dog" preload="none" loop="loop" controls>

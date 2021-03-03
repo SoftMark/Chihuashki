@@ -134,3 +134,66 @@ window.addEventListener("scroll", function() {
 //     contents[i].style.maxHeight = contents[i].offsetHeight+"px";
 // };
 
+
+
+//$('.mfp-gallery').magnificPopup({
+//    type: 'image',
+//    closeOnContentClick: true,
+//    image: {
+//        verticalFit: false
+//    }
+//    gallery: {
+//        enabled: true
+//    }
+//});
+
+
+
+//Grouped galleries big photos
+
+var groups = {};
+$('.galleryItem').each(function() {
+  var id = parseInt($(this).attr('data-group'), 10);
+
+  if(!groups[id]) {
+    groups[id] = [];
+  }
+
+  groups[id].push( this );
+});
+
+
+$.each(groups, function() {
+
+  $(this).magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      gallery: { enabled:true },
+      image: { titleSrc: function(item) {
+				return "LAVUSEN DE LAMUR";
+			} }
+
+  })
+
+});
+
+
+
+
+// Gallery big photo
+
+$(document).ready(function() {
+	$('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return "LAVUSEN DE LAMUR";
+			}
+		}
+	});
+});

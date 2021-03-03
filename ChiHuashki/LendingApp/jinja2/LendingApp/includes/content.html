@@ -34,7 +34,7 @@
                 </div>
                 {% endif %}
             {% else %}
-                <div class="my-text"">
+                <div class="my-text">
                     <p>Нет информации</p>
                 </div>
             {% endif %}
@@ -101,7 +101,9 @@
                     {% if gallery %}
                         {% for image in gallery %}
                             <li class="block-img">
+                                <a href="{{image.image.url}}" data-group="gallery" class="galleryItem">
                                 <img src='{{image.small_image.url}}' alt='{{image.image_name}}'>
+                                </a>
                             </li>
                         {% endfor %}
                     {% endif %}

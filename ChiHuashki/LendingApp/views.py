@@ -11,5 +11,6 @@ def home(request):
                       "chihuahuas": chihuahuas,
                       "gallery": gallery,
                       "config": config,
+                      "gallery_id": 0,
                   }
                   )
