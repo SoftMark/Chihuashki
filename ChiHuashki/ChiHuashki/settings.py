@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "LendingApp.apps.LendingappConfig",
     'django_cleanup',  # should go after your apps
     "django_jinja",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [

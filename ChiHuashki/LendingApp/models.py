@@ -5,8 +5,10 @@ from django.db.models.signals import pre_save, post_init, post_save
 from django.core.files.base import File
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from ckeditor.fields import RichTextField
 import moviepy.editor as moviepy
 import os
+
 
 
 class GalleryImage(models.Model):
@@ -146,9 +148,13 @@ class SiteConfigurations(models.Model):
 
     # About us
     a_us_t_image = models.ImageField(verbose_name='Верхнее изображение', upload_to='gallery')
-    a_us_t_paragraph = models.TextField('Верхний параграф', blank=True)
+    a_us_t_paragraph = RichTextField('Верхний параграф', blank=True)
+    #a_us_t_paragraph = models.TextField('Верхний параграф', blank=True)
     a_us_b_image = models.ImageField(verbose_name='Нижнее изображение', upload_to='gallery')
-    a_us_b_paragraph = models.TextField('Нижний параграф', blank=True)
+    a_us_b_paragraph = RichTextField('Нижний параграф', blank=True)
+    #a_us_b_paragraph = models.TextField('Нижний параграф', blank=True)
+    #rich_text = RichTextField(default='', name='Rich')
+
 
     def get_a_us_t_image(self):
         if self.a_us_t_image:

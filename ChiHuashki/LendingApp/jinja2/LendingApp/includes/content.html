@@ -12,9 +12,7 @@
                     {% endif %}
                     <div class="text-about">
                     {% if config.a_us_t_paragraph %}
-                        <p>
-                            {{config.a_us_t_paragraph}}
-                        </p>
+                        {{config.a_us_t_paragraph|safe}}
                     {% endif %}
                     </div>
                 </div>
@@ -23,9 +21,7 @@
                 <div class="my-text">
                     <div class="text-about">
                     {% if config.a_us_b_paragraph %}
-                        <p>
-                            {{config.a_us_b_paragraph}}
-                        </p>
+                            {{config.a_us_b_paragraph|safe}}
                     {% endif %}
                     </div>
                     {% if config.a_us_b_image %}
