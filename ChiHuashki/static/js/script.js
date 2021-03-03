@@ -70,11 +70,20 @@ imagesDog.forEach(img => {
                 count--;
                 if (count < 0) {
                     count = imgCol + videoCol - 1;
+                    if (video[0] != undefined){
+                        video[0].play();
+                    }
                 }
             } else {
                 count++;
                 if (count > imgCol + videoCol - 1) {
                     count = 0;
+                }
+
+                if (count > imgCol + videoCol - 2) {
+                    if (video[0] != undefined){
+                        video[0].play();
+                    }
                 }
             }
             images.style.transform = "translate(-" + count * imgWidth + "%)";
