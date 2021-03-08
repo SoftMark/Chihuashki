@@ -35,19 +35,19 @@ categoryContent.forEach(categoryDog => {
         closeBut = categoryDog.querySelector(".close-dogs");
 
     if (listDogs.length > 3){
-        openBut.style.display = "inline";
+        openBut.style.display = "block";
     }
 
     openBut.addEventListener("click", function (e) {
         let heightConteiner = conteinerDogs.scrollHeight
         this.removeAttribute("style");
-        closeBut.style.display = "inline";
+        closeBut.style.display = "block";
         conteinerDogs.style.height = heightConteiner + "px";
     })
 
     closeBut.addEventListener("click", function (e) {
         this.removeAttribute("style");
-        openBut.style.display = "inline";
+        openBut.style.display = "block";
         conteinerDogs.removeAttribute("style");
     })
 })

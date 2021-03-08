@@ -204,9 +204,29 @@ a {
 #topChi {
     display: none;
     position: fixed;
+    text-align: center;
     right: 3vw;
     bottom: 120px;
+    width: 3.7vw;
+    height: 3.7vw;
+    border-radius: 100%;
+    /*color: #edc2c6;*/
 }
+
+#topChi:hover {
+    border: double .2vw;
+}
+
+#topChi:active {
+    background-color: #FED1D1;
+}
+
+#topChi img {
+    width: 3vw;
+    height: 3vw;
+    transform: rotate(-90deg);
+}
+
 /*--------------------------------------------------End Header--------------------------------------------------------*/
 
 /*----------------------------------------------------Content---------------------------------------------------------*/
@@ -302,6 +322,7 @@ a {
 .but-all-content {
     position: absolute;
     bottom: 0;
+    font-size: 1.3vw;
     margin-bottom: 0.5vw;
     user-select: none;
 }
@@ -311,10 +332,11 @@ a {
     cursor: pointer;
     padding: 0 0.4vw;
     border-radius: 0.6vw;
+    border: solid .1vw;
 }
 
 .but-all:hover{
-    border: solid .2vw;
+    transform: scale(1.1);
 }
 
 .but-all:active {
@@ -472,10 +494,6 @@ span.name-dog .icon {
     display: grid;
     grid-row-gap: 0.2vw;
     z-index: 1;
-}
-
-.dog .desc-dog:hover {
-    display:none;
 }
 /*-------------------------------------------------End Dog------------------------------------------------------------*/
 
