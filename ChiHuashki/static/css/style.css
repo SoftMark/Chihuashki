@@ -659,11 +659,20 @@ footer {
     .nav-main li {
         width: calc(87vw / 6 + var(--i));
     }
+
+    .list-dogs {
+        grid-template-columns: repeat(2, 26vw);
+    }
+
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     #header {
         background-position: center;
+    }
+
+    .list-dogs {
+        grid-template-columns: repeat(1, 26vw);
     }
 }
 /*---------------------------------------End Adaptive settings--------------------------------------------------------*/
