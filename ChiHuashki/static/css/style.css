@@ -151,11 +151,12 @@ a {
 }
 
 .soc {
-    display: flex;
+    display:inline-block;
+    font-size: 1.6vw;
 }
 
 .soc .icon {
-    margin: 0 1vw;
+    margin: 0 0.5vw 0 1vw;
     overflow: hidden;
     border-radius: 100%;
     border: solid .2vw;
@@ -266,6 +267,7 @@ a {
 .titles {
     text-align: center;
     padding: 2vw 0;
+    font-size: 2vw;
 }
 /*--------------------------------------------------End Content-------------------------------------------------------*/
 
@@ -287,6 +289,7 @@ a {
     text-align: left;
     vertical-align: top;
     max-width: 60%;
+    font-size: 1.2vw;
 }
 
 .about-us img.MyPhoto {
@@ -600,6 +603,8 @@ footer {
     font-size: 2vw;
     height: 2.3vw;
     width: 2.3vw;
+    display:inline-block;
+    vertical-align:bottom;
 }
 
 .soc-name {
@@ -612,8 +617,10 @@ footer {
 }
 
 .viber-icon {
-    height: 1.8vw;
-    width: 1.8vw;
+    height: 2.3vw;
+    width: 2.3vw;
+    display:inline-block;
+    vertical-align:bottom;
 }
 
 .right-footer {
