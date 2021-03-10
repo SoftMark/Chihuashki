@@ -130,7 +130,7 @@ class SiteConfigurationsAdmin(admin.ModelAdmin):
             'fields': ('name',)
         }),
         ('Шапка', {
-            'fields': ("favicon", 'title', ('inst', 'facebook'), ('header_background', "header_m_background"))
+            'fields': ("favicon", 'title', ('inst', 'facebook'), 'header_background')
         }),
         ('О нас', {
             'fields': ("a_us_t_image", "a_us_t_paragraph", "a_us_b_image", "a_us_b_paragraph")

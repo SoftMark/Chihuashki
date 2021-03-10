@@ -134,7 +134,7 @@ class SiteConfigurations(models.Model):
     inst = models.URLField('Instagram ссылка')
     facebook = models.URLField('FaceBook ссылка')
     header_background = models.ImageField(verbose_name='Фон шапки', upload_to='gallery')
-    header_m_background = models.ImageField(verbose_name='Фон шапки(смартфон)', upload_to='gallery', default=None)
+    # header_m_background = models.ImageField(verbose_name='Фон шапки(смартфон)', upload_to='gallery', default=None)
 
     def header_get_background(self):
         if self.header_background:
