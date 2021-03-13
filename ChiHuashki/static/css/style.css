@@ -36,7 +36,7 @@ a {
     background-color: #FEFAFA;
     font-family: sans-serif;
     font-weight: bold;
-    background-image: url("/content/images/lapki.png");
+    background-image: url("/static/images/lapki.png");
     background-blend-mode: overlay;
     background-size: 10vw;
 }
@@ -45,7 +45,7 @@ a {
 /*----------------------------------------------------Header----------------------------------------------------------*/
 #header {
     height: 100vh;
-    background-image: url("/content/images/BackGround.jpg");
+    background-image: url("/static/images/BackGround.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -110,7 +110,7 @@ a {
 }
 
 .nav-main .navigate {
-	user-select: none;
+    user-select: none;
     margin: 0 0.5vw;
     padding: 0.4vw 0;
     transition: all .1s, border-radius step-start;
@@ -209,24 +209,21 @@ a {
     text-align: center;
     right: 3vw;
     bottom: 120px;
-    width: 3.7vw;
-    height: 3.7vw;
-    border-radius: 100%;
     /*color: #edc2c6;*/
 }
 
-#topChi:hover {
-    border: double .2vw;
-}
-
-#topChi:active {
-    background-color: #FED1D1;
-}
-
 #topChi img {
+    border-radius: 100%;
     width: 3vw;
     height: 3vw;
-    transform: rotate(-90deg);
+}
+
+#topChi:hover {
+    transform: scale(1.05);
+}
+
+#topChi:active img {
+    background-color: #FED1D1;
 }
 
 /*--------------------------------------------------End Header--------------------------------------------------------*/
@@ -453,7 +450,6 @@ span.name-dog .icon {
 .desc-dog {
     display: none;
     text-align: left;
-    font-size: 1.1vw;
     padding: 0 2vw 1vw 2vw;
 }
 
@@ -635,9 +631,28 @@ footer {
 
 /*------------------------------------------Adaptive settings---------------------------------------------------------*/
 @media (max-width: 950px) {
+
+    /* Global settings */
+    :root {
+        --width-dog: 35vw;
+        --height-cont-dog: 62vw;
+        --width-cont-dog: 35.4vw;
+        --height-img-dog: 29vw;
+    }
+
+    #topChi {
+        right: 1vw;
+    }
+
+    #topChi img {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    /* Header */
     #header {
-        background-image: url("/content/images/BackGround1.jpg");
-        background-position-y: -30vw;
+        background-image: none;
+        height: 5vw;
     }
 
     #menu-links .nav-logo {
@@ -654,25 +669,209 @@ footer {
 
     .nav-main {
         width: 93vw;
+        font-size: 1.6vw;
     }
 
     .nav-main li {
         width: calc(87vw / 6 + var(--i));
     }
 
+    #head-inform {
+        display: none;
+    }
+
+    /* Content */
+    #container {
+        margin: 0 6vw;
+    }
+
+    .titles {
+        font-size: 3vw;
+    }
+
+    /* About-us */
+    .my-text {
+        text-align: -webkit-center;
+    }
+
+    .about-us img.MyPhoto {
+        width: 30vw;
+        height: 40vw;
+    }
+
+    .about-us img.sert {
+        width: 50vw;
+        height: 30vw;
+    }
+
+    .text-about {
+        display: block;
+        text-align: center;
+        font-size: 2vw;
+    }
+
+    /* Dog */
     .list-dogs {
-        grid-template-columns: repeat(2, 26vw);
+        grid-template-columns: repeat(2, 40vw);
+        grid-auto-rows: var(--height-cont-dog, 62vw);
+    }
+
+    .list-dog {
+        width: var(--width-cont-dog, 35.4vw);
+    }
+
+    .img-line {
+        grid-auto-rows: var(--height-img-dog, 29vw);
+    }
+
+    .arrow-dog {
+        visibility:  visible;
+        height: 4vw;
+    }
+
+    .info-dog {
+        max-width: var(--width-dog, 35vw);
+    }
+
+    span.name-dog, span.name-dog .icon {
+        font-size: 1.8vw;
+    }
+
+    .desc-dog {
+        display: grid;
+    }
+
+    .char-p {
+        font-size: 1.4vw;
+    }
+
+    .char-p .icon {
+        font-size: 3vw;
+    }
+
+    /* Photogallery */
+    .gallery {
+        width: 68.4vw;
+    }
+
+    .block-img {
+        width: 20vw;
+    }
+
+    /* Foter */
+    .left-footer, .right-footer {
+        font-size: 3vw;
+    }
+
+    .footer-title {
+        font-size: 4vw;
+        white-space: nowrap;
+    }
+
+    .footer-contacts {
+        grid-template-columns: 54% auto;
+        font-size: 2.5vw;
+    }
+
+    .icon.PhoneCall {
+        font-size: 2.5vw;
+    }
+
+    .viber-icon {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .soc {
+        font-size: 2.6vw;
+    }
+
+    .footer-contact .soc .icon {
+        font-size: 3vw;
+        height: 3.3vw;
+        width: 3.3vw;
+    }
+
+    .right-footer{
+        width: 40%;
+        font-size: 2vw;
     }
 
 }
 
 @media (max-width: 500px) {
-    #header {
-        background-position: center;
+    /* Global setting */
+    :root {
+        --width-cont-dog: 65.4vw;
+        --height-cont-dog: 98vw;
+        --height-img-dog: 44vw;
+        --width-dog: 65vw;
     }
 
+    #topChi {
+        right: 0;
+    }
+
+    #topChi img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    /* Header */
+    #header {
+        height: 5vw;
+    }
+
+    /* Content */
+    .titles {
+        font-size: 4vw;
+    }
+
+    /* About-us */
+
+    /* Dog */
     .list-dogs {
-        grid-template-columns: repeat(1, 26vw);
+        grid-template-columns: repeat(1, 70vw);
+        grid-auto-rows: var(--height-cont-dog, 98vw);
+    }
+
+    .list-dog {
+        width: var(--width-cont-dog, 65.4vw);
+    }
+
+    .img-line {
+        grid-auto-rows: var(--height-img-dog, 44vw);
+    }
+
+    .info-dog {
+        max-width: var(--width-dog, 65vw);
+    }
+
+    span.name-dog, span.name-dog .icon {
+        font-size: 2.8vw;
+    }
+
+    .char-p {
+        font-size: 2.4vw;
+    }
+
+    .char-p .icon {
+        font-size: 5vw;
+    }
+
+    .but-all-content {
+        font-size: 2.3vw;
+    }
+
+    /* Photogallery */
+    .gallery {
+        width: 69vw;
+    }
+
+    /* Foter */
+
+    .right-footer {
+        width: 39%;
     }
 }
 /*---------------------------------------End Adaptive settings--------------------------------------------------------*/
