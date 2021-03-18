@@ -6,7 +6,10 @@ let butRise = document.getElementById("topChi"),
     categoryContent = document.querySelectorAll(".content"),
     count = 0,
     countGallery = 0,
-    width;
+    width,
+    open_menu = document.getElementById("menu-open"),
+    close_menu = document.getElementById("menu-close"),
+    menu_nav = document.getElementById("nav-main"),
     intervalSlide = setInterval(autoSlide, 5000);
 
 // Scroll slow
@@ -27,15 +30,52 @@ let butRise = document.getElementById("topChi"),
 //     });
 // });
 
+// nav menu phone
+function reset_menu_style() {
+    close_menu.removeAttribute("style");
+    open_menu.removeAttribute("style");
+    menu_nav.removeAttribute("style");
+}
+
+open_menu.addEventListener("click", function (e) {
+    e.preventDefault();
+    this.style.display = "none";
+    close_menu.style.display = "flex";
+    menu_nav.style.transition = "1s ease-in-out";
+    menu_nav.style.right = 0;
+})
+
+close_menu.addEventListener("click", function (e) {
+    e.preventDefault();
+    reset_menu_style();
+    menu_nav.style.transition = "1s ease-in-out";
+})
+
 // button see all dogs
-categoryContent.forEach(categoryDog => {
-    let conteinerDogs = categoryDog.querySelector(".list-dogs"),
+function allSeeButton(categoryDog) {
+	let conteinerDogs = categoryDog.querySelector(".list-dogs"),
         listDogs = categoryDog.querySelectorAll(".list-dog"),
         openBut = categoryDog.querySelector(".open-dogs"),
         closeBut = categoryDog.querySelector(".close-dogs");
 
-    if (listDogs.length > 3){
-        openBut.style.display = "block";
+    if (window.innerWidth >= 950) {
+        if (listDogs.length > 3 && closeBut.style.display == "") {
+            openBut.style.display = "block";
+        } else {
+        	openBut.style.display = "none";
+        }
+    } else if (500 <= window.innerWidth < 950 && closeBut.style.display == "") {
+        if (listDogs.length > 2) {
+            openBut.style.display = "block";
+        } else {
+        	openBut.style.display = "none";
+        }
+    } else if (window.innerWidth < 500 && closeBut.style.display == "") {
+        if (listDogs.length > 1) {
+            openBut.style.display = "block";
+        } else {
+        	openBut.style.display = "none";
+        }
     }
 
     openBut.addEventListener("click", function (e) {
@@ -50,6 +90,21 @@ categoryContent.forEach(categoryDog => {
         openBut.style.display = "block";
         conteinerDogs.removeAttribute("style");
     })
+
+    if (closeBut.style.display == "block" ) {
+        conteinerDogs.style.height = "auto"
+        let heightConteiner = conteinerDogs.scrollHeight
+    	conteinerDogs.style.height = heightConteiner + "px";
+    }
+}
+
+categoryContent.forEach(categoryDog => allSeeButton(categoryDog))
+
+window.addEventListener("resize", function(e) {
+    if (window.innerWidth > 500) {
+        reset_menu_style()
+    }
+	categoryContent.forEach(categoryDog => allSeeButton(categoryDog))
 })
 
 // Slide images dog

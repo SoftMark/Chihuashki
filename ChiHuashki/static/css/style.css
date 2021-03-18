@@ -96,20 +96,24 @@ a {
     height: 90%;
 }
 
-.nav-main {
+#menu-links .but-menu {
+    display: none;
+}
+
+#nav-main {
     display: flex;
     font-size: 1.2vw;
     width: 71vw;
     justify-content: space-around;
 }
 
-.nav-main li {
+#nav-main li {
     display: block;
     width: calc(79vw / 6 + var(--i));
     align-self: center;
 }
 
-.nav-main .navigate {
+#nav-main .navigate {
     user-select: none;
     margin: 0 0.5vw;
     padding: 0.4vw 0;
@@ -121,11 +125,11 @@ a {
     transform: scale(1.1);
 }
 
-.nav-main .navigate:hover {
+#nav-main .navigate:hover {
     border: solid .2vw;
 }
 
-.nav-main .navigate:active {
+#nav-main .navigate:active {
     background-color: #FED1D1;
 }
 
@@ -292,8 +296,8 @@ a {
 
 .about-us img.MyPhoto {
     /*float: left;*/
-    width: 20vw;
-    height: 27vw;
+    width: 25vw;
+    height: 35vw;
 }
 
 .about-us img.sert {
@@ -390,15 +394,6 @@ a {
     opacity: 60%;
 }
 
-.arrow-dog:hover {
-    transform: scale(1.3);
-    opacity: 100%;
-}
-
-.images:hover .arrow-dog {
-    visibility: visible;
-}
-
 .next-img {
     right: 0;
 }
@@ -408,8 +403,17 @@ a {
     transform: rotate(180deg);
 }
 
+.arrow-dog:hover {
+    transform: scale(1.3);
+    opacity: 100%;
+}
+
 .previous-img:hover {
     transform: scale(1.3) rotate(180deg);
+}
+
+.images:hover .arrow-dog {
+    visibility: visible;
 }
 
 .img-line {
@@ -632,7 +636,7 @@ footer {
 /*------------------------------------------Adaptive settings---------------------------------------------------------*/
 @media (max-width: 950px) {
 
-    /* Global settings */
+	/* Global settings */
     :root {
         --width-dog: 35vw;
         --height-cont-dog: 62vw;
@@ -641,12 +645,12 @@ footer {
     }
 
     #topChi {
-        right: 1vw;
+    	right: 1vw;
     }
 
     #topChi img {
-        width: 4vw;
-        height: 4vw;
+    	width: 4vw;
+    	height: 4vw;
     }
 
     /* Header */
@@ -667,12 +671,12 @@ footer {
         width: 7vw
     }
 
-    .nav-main {
+    #nav-main {
         width: 93vw;
         font-size: 1.6vw;
     }
 
-    .nav-main li {
+    #nav-main li {
         width: calc(87vw / 6 + var(--i));
     }
 
@@ -682,11 +686,15 @@ footer {
 
     /* Content */
     #container {
-        margin: 0 6vw;
+    	margin: 0 6vw;
     }
 
     .titles {
-        font-size: 3vw;
+    	font-size: 3vw;
+    }
+
+    .content {
+        padding-bottom: 4vw;
     }
 
     /* About-us */
@@ -695,16 +703,18 @@ footer {
     }
 
     .about-us img.MyPhoto {
-        width: 30vw;
-        height: 40vw;
+    	width: 40vw;
+    	height: 55vw;
     }
 
     .about-us img.sert {
-        width: 50vw;
-        height: 30vw;
+    	width: 65vw;
+    	height: 40vw;
     }
 
     .text-about {
+    	max-width: 100%;
+    	padding: 1vw;
         display: block;
         text-align: center;
         font-size: 2vw;
@@ -720,13 +730,13 @@ footer {
         width: var(--width-cont-dog, 35.4vw);
     }
 
-    .img-line {
-        grid-auto-rows: var(--height-img-dog, 29vw);
-    }
-
     .arrow-dog {
         visibility:  visible;
         height: 4vw;
+    }
+
+    .img-line {
+        grid-auto-rows: var(--height-img-dog, 29vw);
     }
 
     .info-dog {
@@ -738,7 +748,7 @@ footer {
     }
 
     .desc-dog {
-        display: grid;
+    	display: grid;
     }
 
     .char-p {
@@ -746,88 +756,171 @@ footer {
     }
 
     .char-p .icon {
-        font-size: 3vw;
+    	font-size: 3vw;
+    }
+
+    .but-all-content {
+    	font-size: 2.3vw;
+    	margin-bottom: 1vw;
     }
 
     /* Photogallery */
     .gallery {
-        width: 68.4vw;
+    	width: 68.4vw;
     }
 
     .block-img {
-        width: 20vw;
+    	width: 20vw;
     }
 
     /* Foter */
     .left-footer, .right-footer {
-        font-size: 3vw;
+    	font-size: 3vw;
     }
 
     .footer-title {
-        font-size: 4vw;
-        white-space: nowrap;
+    	font-size: 4vw;
+    	white-space: nowrap;
     }
 
     .footer-contacts {
-        grid-template-columns: 54% auto;
-        font-size: 2.5vw;
+    	grid-template-columns: 54% auto;
+    	font-size: 2.5vw;
     }
 
     .icon.PhoneCall {
-        font-size: 2.5vw;
+    	font-size: 2.5vw;
     }
 
     .viber-icon {
-        width: 3vw;
-        height: 3vw;
+    	width: 3vw;
+    	height: 3vw;
     }
 
     .soc {
-        font-size: 2.6vw;
+    	font-size: 2.6vw;
     }
 
     .footer-contact .soc .icon {
-        font-size: 3vw;
-        height: 3.3vw;
-        width: 3.3vw;
+    	font-size: 3vw;
+    	height: 3.3vw;
+    	width: 3.3vw;
     }
 
     .right-footer{
-        width: 40%;
-        font-size: 2vw;
+    	width: 40%;
+    	font-size: 2vw;
     }
 
 }
 
 @media (max-width: 500px) {
-    /* Global setting */
-    :root {
-        --width-cont-dog: 65.4vw;
-        --height-cont-dog: 98vw;
-        --height-img-dog: 44vw;
-        --width-dog: 65vw;
-    }
+	/* Global setting */
+	:root {
+		--width-cont-dog: 65.4vw;
+		--height-cont-dog: 98vw;
+		--height-img-dog: 44vw;
+		--width-dog: 65vw;
+	}
 
-    #topChi {
-        right: 0;
-    }
+	#topChi {
+		right: 0;
+	}
 
-    #topChi img {
-        width: 6vw;
-        height: 6vw;
-    }
+	#topChi img {
+		width: 6vw;
+		height: 6vw;
+	}
 
-    /* Header */
+	/* Header */
     #header {
-        height: 5vw;
+        height: 16vw;
+    }
+
+    #menu-links {
+        height: 16vw;
+    }
+
+    #menu-links .nav-logo {
+        display: flex;
+        width: 79vw;
+        border-radius: 0 0 10vw 1vw;
+    }
+
+    #menu-links .nav-logo2 {
+        display: none;
+    }
+
+    #menu-links a#menu-open {
+        display: flex;
+    }
+
+    #menu-links a.but-menu {
+        width: 20vw;
+    }
+
+    #menu-links a.but-menu img {
+        width: 60%;
+    }
+
+    #nav-main {
+        flex-direction: column;
+        position: fixed;
+        font-size: 5.6vw;
+        background-color: #fed1d1f2;
+        top: 16vw;
+        right: -50vw;
+        width: 50vw;
+        height: calc(100% - 16vw);
+        z-index: -1;
+    }
+
+    #nav-main li {
+        width: 100%;
+        height: 100%;
+        border-bottom: 1vw solid;
+    }
+
+    #nav-main li a.navigate {
+        border: none;
+        height: 100%;
+    }
+
+    #nav-main .navigate:hover {
+        border: none;
+    }
+
+    .navigate:hover {
+        transform: none;
     }
 
     /* Content */
+    .label {
+        top: -16vw;
+    }
+
     .titles {
-        font-size: 4vw;
+    	font-size: 4vw;
+    }
+
+    .content {
+        padding-bottom: 6vw;
     }
 
     /* About-us */
+    .about-us img.MyPhoto {
+    	width: 55vw;
+    	height: 75vw;
+    }
+
+    .text-about {
+    	font-size: 3vw;
+    }
+
+    .about-us img.sert {
+    	width: 75vw;
+    	height: 50vw;
+    }
 
     /* Dog */
     .list-dogs {
@@ -836,42 +929,79 @@ footer {
     }
 
     .list-dog {
-        width: var(--width-cont-dog, 65.4vw);
+    	width: var(--width-cont-dog, 65.4vw);
+    }
+
+    .arrow-dog {
+    	height: 8vw;
     }
 
     .img-line {
-        grid-auto-rows: var(--height-img-dog, 44vw);
+    	grid-auto-rows: var(--height-img-dog, 44vw);
     }
 
     .info-dog {
-        max-width: var(--width-dog, 65vw);
+    	max-width: var(--width-dog, 65vw);
     }
 
     span.name-dog, span.name-dog .icon {
-        font-size: 2.8vw;
+    	font-size: 2.8vw;
     }
 
     .char-p {
-        font-size: 2.4vw;
+    	font-size: 2.4vw;
     }
 
     .char-p .icon {
-        font-size: 5vw;
+    	font-size: 5vw;
     }
 
     .but-all-content {
-        font-size: 2.3vw;
+    	font-size: 3.3vw;
+    	margin-bottom: 2.5vw;
     }
 
     /* Photogallery */
     .gallery {
-        width: 69vw;
+    	width: 69vw;
     }
 
     /* Foter */
+    footer {
+        position: relative;
+    }
+
+    .footer-contacts {
+        grid-template-columns: 74% 60%;
+        font-size: 3.5vw;
+    }
+
+    .footer-contact ul {
+        grid-auto-rows: 6vw;
+    }
+
+    .viber-icon {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .icon.PhoneCall {
+        font-size: 3.5vw;
+    }
+
+    .soc {
+        font-size: 3.5vw;
+    }
+
+    .footer-contact .soc .icon {
+        font-size: 4vw;
+        height: 4.3vw;
+        width: 4.3vw;
+    }
 
     .right-footer {
-        width: 39%;
+        position: absolute;
+        bottom: 0;
     }
 }
 /*---------------------------------------End Adaptive settings--------------------------------------------------------*/
