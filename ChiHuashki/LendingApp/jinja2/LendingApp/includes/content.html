@@ -7,7 +7,7 @@
                 {% if config.a_us_t_image or config.a_us_t_paragraph %}
                 <div class="my-text">
                     {% if config.a_us_t_image %}
-                    <img class="MyPhoto" src="{{config.a_us_t_image}}" alt="Женщина с чихуахуа">
+                    <img class="MyPhoto" src="{{config.a_us_t_image.url}}" alt="Женщина с чихуахуа">
                     {% endif %}
                     <div class="text-about">
                     {% if config.a_us_t_paragraph %}
@@ -24,7 +24,7 @@
                     {% endif %}
                     </div>
                     {% if config.a_us_b_image %}
-                    <img class="sert" src="{{config.a_us_b_image}}" alt="Сертификат">
+                    <img class="sert" src="{{config.a_us_b_image.url}}" alt="Сертификат">
                     {% endif %}
                 </div>
                 {% endif %}
@@ -36,8 +36,30 @@
         </div>
     </section>
 
-
     <hr class="linear">
+    <section class="contents">
+        <a class="label" id="photogallery"></a>
+        <h2 class="titles">Фотогалерея</h2>
+        <div class="photogallery">
+            <img class="gallery-arrow gallery-previous" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">
+            <img class="gallery-arrow gallery-next" src="{{ static('images/arrow_right.svg') }}" alt="Следующая">
+            <div class="gallery">
+                <ul class="gallery-list">
+                    {% if gallery %}
+                        {% for image in gallery %}
+                            <li class="block-img">
+                                <a href="{{image.image.url}}" data-group="gallery" class="galleryItem">
+                                <img src='{{image.small_image.url}}' alt='{{image.image_name}}'>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {# <hr class="linear">
     <section class="contents">
         <a class="label" id="dogs-all"></a>
         <h2 class="titles">Все Пёсики</h2>
@@ -45,13 +67,13 @@
             {% set gender, age, sale = "all", "all", "all" %}
             {% include "LendingApp/includes/dog.html" %}
         </div>
-    </section>
+    </section> #}
 
 
     <hr class="linear">
     <section class="contents">
         <a class="label" id="dogs-puppies"></a>
-        <h2 class="titles">Пёсики на продажу</h2>
+        <h2 class="titles">Щенки на продажу</h2>
         <div class="content">
             {% set gender, age, sale = "all", "all", "Да" %}
             {% include "LendingApp/includes/dog.html" %}
@@ -85,26 +107,6 @@
         </div>
     </section>
     <hr class="linear">
-    <section class="contents">
-        <a class="label" id="photogallery"></a>
-        <h2 class="titles">Фотогалерея</h2>
-        <div class="photogallery">
-            <img class="gallery-arrow gallery-previous" src="{{ static('images/arrow_right.svg') }}" alt="Предыдущая">
-            <img class="gallery-arrow gallery-next" src="{{ static('images/arrow_right.svg') }}" alt="Следующая">
-            <div class="gallery">
-                <ul class="gallery-list">
-                    {% if gallery %}
-                        {% for image in gallery %}
-                            <li class="block-img">
-                                <a href="{{image.image.url}}" data-group="gallery" class="galleryItem">
-                                <img src='{{image.small_image.url}}' alt='{{image.image_name}}'>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </section>
+
 
 </main>
