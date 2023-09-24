@@ -11,7 +11,7 @@
     <meta name="keywords" content="купить чихуахуа, чихуахуа, щенки, собаки">
     <meta property="og:image" content="{% if config.header_background %}{{ config.header_background }}{% else %}{{ static('images/no_photo.jpg') }}{% endif %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="{% if config.favicon %}{{ config.favicon }}{% else %}{{ static('images/favicon.ico') }}{% endif %}" rel="icon">
+    <link href="{{ static('images/favicon.ico') }}" rel="icon">
     <link href="{{ static('/font/fonts.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ static('/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ static('/css/magnific-popup.css') }}" rel="stylesheet" type="text/css">
