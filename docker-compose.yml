@@ -1,0 +1,11 @@
+services:
+  chihuashki:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ChiHuashki:/service/ChiHuashki
+
+    command: >
+      sh -c "python ChiHuashki/manage.py runserver 0.0.0.0:8000"
