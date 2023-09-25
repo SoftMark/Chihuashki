@@ -4,7 +4,7 @@ COPY requirements.txt /service/requirements.txt
 COPY ChiHuashki /service/ChiHuashki
 
 WORKDIR /service
-EXPOSE 8000
+EXPOSE 80
 
 RUN apk update && apk add --no-cache ffmpeg
 RUN pip install -r requirements.txt
