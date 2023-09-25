@@ -235,7 +235,7 @@ $.each(groups, function() {
       closeBtnInside: false,
       gallery: { enabled:true },
       image: { titleSrc: function(item) {
-				return "LAVUSEN DE LAMUR";
+				return "LAVUSEN DE LAMOUR";
 			} }
 
   })
@@ -256,7 +256,7 @@ $(document).ready(function() {
 		image: {
 			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
 			titleSrc: function(item) {
-				return "LAVUSEN DE LAMUR";
+				return "LAVUSEN DE LAMOUR";
 			}
 		}
 	});
